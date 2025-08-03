@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpiceDelight</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <!-- Navbar section -->
+    <nav class="navbar">
+     <!-- Left: Toggle Button and Cart Count -->
+      <div class="nav-left">
+        <button id="navToggle" class="toggle-btn">
+          <span id="toggleSymbol">+</span>
+          <span id="cartCount">(0)</span>
+        </button>
+      </div>
+
+      <!-- Center: Logo -->
+      <div class="nav-center">
+        <div class="logo">SpiceDelight</div>
+      </div>
+
+      <!-- Right: Menu for Laptop view -->
+      <div class="nav-right desktop-menu">
+        <ul>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Videos</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Cart 🛒</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Mobile dropdown menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Cart 🛒</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+
+
+
+  <section class="hero" data-aos="fade-down">
+    <div class="hero-text">
+      <h2>Delight in Every Bite</h2>
+      <p>Your favorite meals made with love & spice.</p>
+    </div>
+    <div class="hero-image">
+      <img src="images/food.png" alt="Tasty Dish">
+    </div>
+    <div class="hero-subtitle">
+      <h2>All about Delight Spice</h2>
+    </div>
+  </section>
+
+
+
+  <section class="drinks-section" data-aos="fade-left">
+    <h2 class="section-title">Our Signature Drinks</h2>
+    <button class="scroll-btn left-btn">&#10094;</button>
+
+    <div class="drink-slider">
+      <div class="drink-card">
+        <div class="drink-image-box">
+          <img src="images/drink 2.png" alt="Glass of aperol spritz cocktail">
+        </div>
+        <h3>Spritz Cocktail</h3>
+        <p class="price">$4.99</p>
+        <button onclick="addToCart()" class="order-btn">Order Now</button>
+      </div>
+
+      <div class="drink-card">
+        <div class="drink-image-box">
+          <img src="images/drink 3.png" alt="Caramel popcorn milkshake">
+        </div>
+        <h3>Caramel Popcorn Milkshake</h3>
+        <p class="price">$8.99</p>
+        <button onclick="addToCart()" class="order-btn">Order Now</button>
+      </div>
+
+      <div class="drink-card">
+        <div class="drink-image-box">
+          <img src="images/drink 4.png" alt="Orange juice with mint">
+        </div>
+        <h3>Orange Juice with Mint</h3>
+        <p class="price">$9.59</p>
+        <button onclick="addToCart()" class="order-btn">Order Now</button>
+      </div>
+
+      <!-- Add more cards here -->
+       
+      <div class="drink-card">
+        <div class="drink-image-box">
+          <img src="images/drink 6.png" alt="Classic cooling mojito">
+        </div>
+        <h3>Classic Cooling Mojito</h3>
+        <p class="price">$12.59</p>
+        <button onclick="addToCart()" class="order-btn">Order Now</button>
+      </div>
+
+      
+      <div class="drink-card">
+        <div class="drink-image-box">
+          <img src="images/drink 7.png" alt="Mojito cocktail realistic">
+        </div>
+        <h3>Mojito Cocktail</h3>
+        <p class="price">$2.59</p>
+        <button onclick="addToCart()" class="order-btn">Order Now</button>
+      </div>
+
+      
+      <div class="drink-card">
+        <div class="drink-image-box">
+          <img src="images/drink 1.png" alt="Freshly squeezed orange juice">
+        </div>
+        <h3>Orange Juice</h3>
+        <p class="price">$9.00</p>
+        <button onclick="addToCart()" class="order-btn">Order Now</button>
+      </div>
+
+      
+      <div class="drink-card">
+        <div class="drink-image-box">
+          <img src="images/drink 8.png" alt="Tasty bubble tea drink and peach">
+        </div>
+        <h3>Tasty bubble tea drink & peach</h3>
+        <p class="price">$7.99</p>
+        <button onclick="addToCart()" class="order-btn">Order Now</button>
+      </div>
+
+      
+      <div class="drink-card">
+        <div class="drink-image-box">
+          <img src="images/drink 9.png" alt="Classic paloma cocktail isolated on white background. copy space">
+        </div>
+        <h3>Classic Paloma Cocktail</h3>
+        <p class="price">$9.59</p>
+        <button onclick="addToCart()" class="order-btn">Order Now</button>
+      </div>
+
+      
+      <div class="drink-card">
+        <div class="drink-image-box">
+          <img src="images/drink 10.png" alt="Gin tonic cocktail drink into a glass isolated on white background copy space">
+        </div>
+        <h3>Gin Tonic Cocktail</h3>
+        <p class="price">$9.90</p>
+        <button onclick="addToCart()" class="order-btn">Order Now</button>
+      </div>
+
+      
+      <div class="drink-card">
+        <div class="drink-image-box">
+          <img src="images/drink 11.png" alt="Front view refreshing cocktail with apple slices">
+        </div>
+        <h3>Cocktail with Apple Slices</h3>
+        <p class="price">$9.59</p>
+        <button onclick="addToCart()" class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <button class="scroll-btn right-btn">&#10095;</button>
+  </section>
+
+
+
+  
+
+  <div class="marquee-container">
+    <div class="marquee">
+      <span>SHOP WITH SPICE DELIGHT&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>SHOP WITH SPICE DELIGHT&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>SHOP WITH SPICE DELIGHT&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>SHOP WITH SPICE DELIGHT&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+
+
+
+
+  <section class="food-section" data-aos="fade-right">
+    <h2 class="section-Title">Our Food</h2>
+    <div class="food-slider-container">
+    <button class="scroll-button left-button">&#10094;</button>
+
+      <div class="food-slider">
+        <div class="food-card">
+          <div class="food-img-box">
+            <img src="images/food 1.png" alt="Chicken wings plate of the appetizing potatoes chicken wings onion herbs">
+          </div>
+          <h3 class="food-title">Chicken Wings & Potatoes</h3>
+          <p class="price">$5.34</p>
+          <button class="food-btn">Order Now</button>
+        </div>
+
+        <div class="food-card">
+          <div class="food-img-box">
+            <img src="images/food 2.png" alt="Chicken with citruses and spices on white">
+          </div>
+          <h3 class="food-title">Chicken Citruses & Spices</h3>
+          <p class="price">$7.90</p>
+          <button class="food-btn">Order Now</button>
+        </div>
+
+        <div class="food-card">
+          <div class="food-img-box">
+            <img src="images/food 3.jpg" alt="Fried rice with spicy chicken masala curry chicken leg vegetables and salad combo">
+          </div>
+          <h3 class="food-title">Fried Rice & Salad with Chicken</h3>
+          <p class="price">$6.33</p>
+          <button class="food-btn">Order Now</button>
+        </div>
+
+        <div class="food-card">
+          <div class="food-img-box">
+            <img src="images/food 4.png" alt="A delicious filipino food platter a feast for the senses">
+          </div>
+          <h3 class="food-title">Filipino Food Platter</h3>
+          <p class="price">$4.56</p>
+          <button class="food-btn">Order Now</button>
+        </div>
+
+        <div class="food-card">
+          <div class="food-img-box">
+            <img src="images/food 5.jpeg" alt="Grilled meat platter with rice and vegetables on a white plate celebrating traditional cuisine">
+          </div>
+          <h3 class="food-title">Grilled Meat with Rice & Vegetable</h3>
+          <p class="price">$9.99</p>
+          <button class="food-btn">Order Now</button>
+        </div>
+
+        <div class="food-card">
+          <div class="food-img-box">
+            <img src="images/food 6.jpeg" alt="Western food-view of lamb chop set with burger and french fries isolated on white background">
+          </div>
+          <h3 class="food-title">Burger & French Fries</h3>
+          <p class="price">$8.33</p>
+          <button class="food-btn">Order Now</button>
+        </div>
+
+        <div class="food-card">
+          <div class="food-img-box">
+            <img src="images/food 7.png" alt="Front view tasty fried eggplants with meat cooked rice and raisins on dark surface">
+          </div>
+          <h3 class="food-title">Tasty Fried Eggplants & Meat Cooked Rice</h3>
+          <p class="price">$10.45</p>
+          <button class="food-btn">Order Now</button>
+        </div>
+
+        <div class="food-card">
+          <div class="food-img-box">
+            <img src="images/food 8.png" alt="Lifestyle food gourmet comida gastronomy">
+          </div>
+          <h3 class="food-title">Food Gourmet Comida Gastronomy</h3>
+          <p class="price">$5.33</p>
+          <button class="food-btn">Order Now</button>
+        </div>
+
+        <div class="food-card">
+          <div class="food-img-box">
+            <img src="images/food 9.png" alt="Boiled spaghetti, pepper and chicken legs on white plate">
+          </div>
+          <h3 class="food-title">Boiled Spaghetti, pepper & chicken legs</h3>
+          <p class="price">$6.00</p>
+          <button class="food-btn">Order Now</button>
+        </div>
+
+        <!-- Add more food-card blocks as needed -->
+      </div>
+
+      <button class="scroll-button right-button">&#10095;</button>
+    </div>
+  </section>
+
+
+  <section id="hero-video" data-aos="zoom-in">
+    <h2 class="video-title">Our Culinary Experience</h2>
+    <div class="video-container">
+      <video autoplay muted loop playsinline>
+        <source src="videos/hero-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-overlay">
+        <div class="video-text">
+          <h1>Delight in Every Bite</h1>
+          <p>Experience the Taste of Authentic Texas Cuisine</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+
+  <section class="chef-section" data-aos="fade-in" data-aos-delay="300">
+    <div class="chef-container">
+      <div class="chef-image">
+        <img src="images/chef-image 2.png" alt="Chef James">
+      </div>
+      <div class="chef-text">
+        <h2>Meet Our Head Chef</h2>
+        <p>
+          At Spice Delight, our passion for flavor begins in the heart of the kitchen — with <strong>Chef James</strong>,
+          a culinary artist known for transforming everyday ingredients into unforgettable dishes.
+          With years of experience, Chef James combines traditional techniques with a modern twist to create meals that
+          feel both nostalgic and exciting. Every plate reflects his warmth, creativity, and commitment to excellence.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+<!-- ₦3,000 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       <!--  <p>Glass of aperol spritz cocktail served chilled.</p> -->
+        
+
+
+
+
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
