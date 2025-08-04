@@ -257,10 +257,16 @@ body {
   color: #004080;
   cursor: pointer;
   padding: 5px 10px;
+  margin-left: 0px;
 }
 
 #toggleSymbol {
   font-weight: bold;
+  font-size: 36px;
+  display: inline-block;
+  line-height: 1;
+  padding: 8px 8px;
+  border-radius: 10px;
 }
 
 #cartCount {
@@ -365,7 +371,6 @@ body {
 }
 
 
-
 /* 
 .scroll-btn {
   position: absolute;
@@ -423,6 +428,45 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
+
+
+.scroll-buttons {
+  display: none;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.scroll-buttons button {
+  font-size: 24px;
+  padding: 5px 15px;
+  border: none;
+  background-color: #fbe9e7;
+  color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Show only on mobile */
+@media (max-width: 576px) {
+  .scroll-buttons {
+    display: flex;
+  }
+
+  .scroll-btn {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -512,7 +556,7 @@ body {
 
 .scroll-button {
   position: absolute;
-  top: 85%;
+  top: 50%;
   transform: translateY(-50%);
   z-index: 5;
   padding: 10px 15px;
@@ -564,9 +608,33 @@ body {
   }
 
   .scroll-button {
-    top: 92%;
+    top: 50%;
   }
 }
+
+
+/* Show only on mobile */
+@media (max-width: 576px) {
+  .scroll-buttons {
+    display: flex;
+  }
+
+  .scroll-button {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
