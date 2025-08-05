@@ -9,6 +9,13 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #fefefe;
   overflow-x: hidden;
+  touch-action: manipulation;
+  overscroll-behavior: none;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
 }
 
 /* ✅ NAVBAR */
