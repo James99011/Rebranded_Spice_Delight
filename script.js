@@ -89,7 +89,7 @@ window.addEventListener('load', updateScrollButtons);
 
 
 
-// Drink buttons
+// === DRINK BOX SCROLL ===
 const drinkScrollLeftBtn = document.getElementById("drink-left");
 const drinkScrollRightBtn = document.getElementById("drink-right");
 const drinkBox = document.querySelector('.drink-slider');
@@ -100,10 +100,10 @@ function getDrinkScrollAmount() {
   
   const marginLeft = parseFloat(cardStyles.marginLeft);
   const marginRight = parseFloat(cardStyles.marginRight);
-  
-  return drinkCard.offsetWidth + marginLeft + marginRight;
-} 
 
+  // Use boundingClientRect for accurate width (cross-browser)
+  return drinkCard.getBoundingClientRect().width + marginLeft + marginRight;
+}
 
 drinkScrollLeftBtn.addEventListener("click", () => {
   drinkBox.scrollBy({ left: -getDrinkScrollAmount(), behavior: "smooth" });
@@ -112,6 +112,8 @@ drinkScrollLeftBtn.addEventListener("click", () => {
 drinkScrollRightBtn.addEventListener("click", () => {
   drinkBox.scrollBy({ left: getDrinkScrollAmount(), behavior: "smooth" });
 });
+
+
 
 
 
@@ -171,32 +173,28 @@ window.addEventListener('load', updateScrollBtn);
 
 
 
-// Food buttons
+// === FOOD BOX SCROLL ===
 const foodScrollLeftBtn = document.getElementById("food-left");
 const foodScrollRightBtn = document.getElementById("food-right");
 const foodBox = document.querySelector('.food-slider');
 
-function getDrinkScrollAmount() {
+function getFoodScrollAmount() {
   const foodCard = foodBox.querySelector('.food-card');
   const cardStyles = window.getComputedStyle(foodCard);
-  
+
   const marginLeft = parseFloat(cardStyles.marginLeft);
   const marginRight = parseFloat(cardStyles.marginRight);
-  
-  return foodCard.offsetWidth + marginLeft + marginRight;
-} 
+
+  return foodCard.getBoundingClientRect().width + marginLeft + marginRight;
+}
 
 foodScrollLeftBtn.addEventListener("click", () => {
-  foodBox.scrollBy({ left: -getDrinkScrollAmount(), behavior: "smooth" });
+  foodBox.scrollBy({ left: -getFoodScrollAmount(), behavior: "smooth" });
 });
 
 foodScrollRightBtn.addEventListener("click", () => {
-  foodBox.scrollBy({ left: getDrinkScrollAmount(), behavior: "smooth" });
+  foodBox.scrollBy({ left: getFoodScrollAmount(), behavior: "smooth" });
 });
-
-
-
-
 
 
 
