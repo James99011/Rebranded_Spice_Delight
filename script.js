@@ -89,6 +89,15 @@ window.addEventListener('load', updateScrollButtons);
 
 
 
+// Drink buttons
+document.getElementById("drink-left").addEventListener("click", () => {
+  document.querySelector(".drink-slider").scrollLeft -= 200;
+});
+document.getElementById("drink-right").addEventListener("click", () => {
+  document.querySelector(".drink-slider").scrollLeft += 200;
+});
+
+
 
 
 
@@ -146,6 +155,16 @@ window.addEventListener('load', updateScrollBtn);
 
 
 
+// Food buttons
+document.getElementById("food-left").addEventListener("click", () => {
+  document.querySelector(".food-slider").scrollLeft -= 200;
+});
+document.getElementById("food-right").addEventListener("click", () => {
+  document.querySelector(".food-slider").scrollLeft += 200;
+});
+
+
+
 
 
 
@@ -169,24 +188,6 @@ AOS.init({
 
 
 
-
-
-
-// Drink buttons
-document.getElementById("drink-left").addEventListener("click", () => {
-  document.querySelector(".drink-slider").scrollLeft -= 200;
-});
-document.getElementById("drink-right").addEventListener("click", () => {
-  document.querySelector(".drink-slider").scrollLeft += 200;
-});
-
-// Food buttons
-document.getElementById("food-left").addEventListener("click", () => {
-  document.querySelector(".food-slider").scrollLeft -= 200;
-});
-document.getElementById("food-right").addEventListener("click", () => {
-  document.querySelector(".food-slider").scrollLeft += 200;
-});
 
 
 
