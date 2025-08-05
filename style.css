@@ -265,12 +265,12 @@ body {
   font-size: 36px;
   display: inline-block;
   line-height: 1;
-  padding: 2px 5px;
+  padding: 5px 7px;
   border-radius: 10px;
 }
 
 #cartCount {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 
@@ -640,7 +640,7 @@ body {
 
 .marquee-container {
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   background: transparent;
   margin-top: 20px;
 }

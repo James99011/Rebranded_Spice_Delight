@@ -90,11 +90,20 @@ window.addEventListener('load', updateScrollButtons);
 
 
 // Drink buttons
-document.getElementById("drink-left").addEventListener("click", () => {
-  document.querySelector(".drink-slider").scrollLeft -= 200;
+const drinkScrollLeftBtn = document.getElementById("drink-left");
+const drinkScrollRightBtn = document.getElementById("drink-right");
+const drinkBox = document.querySelector('.drink-slider');
+
+function getDrinkScrollAmount() {
+  return drinkBox.clientWidth * 0.6; // 60% of container width
+}
+
+drinkScrollLeftBtn.addEventListener("click", () => {
+  drinkBox.scrollBy({ left: -getDrinkScrollAmount(), behavior: "smooth" });
 });
-document.getElementById("drink-right").addEventListener("click", () => {
-  document.querySelector(".drink-slider").scrollLeft += 200;
+
+drinkScrollRightBtn.addEventListener("click", () => {
+  drinkBox.scrollBy({ left: getDrinkScrollAmount(), behavior: "smooth" });
 });
 
 
@@ -156,11 +165,20 @@ window.addEventListener('load', updateScrollBtn);
 
 
 // Food buttons
-document.getElementById("food-left").addEventListener("click", () => {
-  document.querySelector(".food-slider").scrollLeft -= 200;
+const foodScrollLeftBtn = document.getElementById("food-left");
+const foodScrollRightBtn = document.getElementById("food-right");
+const foodBox = document.querySelector('.food-slider');
+
+function getDrinkScrollAmount() {
+  return foodBox.clientWidth * 0.6; // 60% of container width
+}
+
+foodScrollLeftBtn.addEventListener("click", () => {
+  foodBox.scrollBy({ left: -getDrinkScrollAmount(), behavior: "smooth" });
 });
-document.getElementById("food-right").addEventListener("click", () => {
-  document.querySelector(".food-slider").scrollLeft += 200;
+
+foodScrollRightBtn.addEventListener("click", () => {
+  foodBox.scrollBy({ left: getDrinkScrollAmount(), behavior: "smooth" });
 });
 
 
@@ -176,15 +194,15 @@ document.getElementById("food-right").addEventListener("click", () => {
 
 
 
-
-
-
-AOS.init({
+window.addEventListener('load', function () {
+  AOS.init({
   duration: 1000, // time in ms
   easing: 'ease-in-out', // animation style
   once: true, // whether animation should happen only once
-  offset: 100, // adjust trigger point
+  offset: 0, // adjust trigger point
 });
+});
+
 
 
 
