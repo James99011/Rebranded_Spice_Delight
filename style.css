@@ -303,6 +303,7 @@ body {
   gap: 15px;
   padding: 20px 0;
   scrollbar-width: none;
+  white-space: nowrap;
 }
 
 .drink-slider::-webkit-scrollbar {
@@ -496,6 +497,7 @@ body {
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   padding: 10px 0;
+  white-space: nowrap;
 }
 
 

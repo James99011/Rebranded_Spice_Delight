@@ -95,7 +95,9 @@ const drinkScrollRightBtn = document.getElementById("drink-right");
 const drinkBox = document.querySelector('.drink-slider');
 
 function getDrinkScrollAmount() {
-  return drinkBox.clientWidth * 0.6; // 60% of container width
+ /*  return drinkBox.clientWidth * 0.6; */ // 60% of container width
+ const drinkCard = drinkBox.querySelector(".drink-card");
+ return drinkCard.offsetWidth;
 }
 
 drinkScrollLeftBtn.addEventListener("click", () => {
@@ -170,7 +172,9 @@ const foodScrollRightBtn = document.getElementById("food-right");
 const foodBox = document.querySelector('.food-slider');
 
 function getDrinkScrollAmount() {
-  return foodBox.clientWidth * 0.6; // 60% of container width
+  /* return foodBox.clientWidth * 0.6; */ // 60% of container width
+ const foodCard = foodBox.querySelector(".food-card");
+ return foodCard.offsetWidth;
 }
 
 foodScrollLeftBtn.addEventListener("click", () => {
