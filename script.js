@@ -155,6 +155,7 @@ function setupCardScroller({ leftBtnId, rightBtnId, sliderClass, cardClass }) {
     const marginRight = parseFloat(styles.marginRight);
 
     return cardRect.width + marginLeft + marginRight;
+    console.log("Scroll width:", cardRect.width, "Margins:", marginLeft, marginRight);
   }
 
   scrollLeftBtn.addEventListener("click", () => {
