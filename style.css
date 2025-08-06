@@ -495,6 +495,12 @@ html, body {
   .scroll-btn {
     display: none;
   }
+
+  .scroll-buttons.drink-scroll-buttons {
+    width: 100%;
+    box-sizing: border-box; 
+    flex-grow: 1;
+  }
 }
 
 
