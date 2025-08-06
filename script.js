@@ -139,53 +139,45 @@ foodSlider.addEventListener('scroll', updateScrollBtn);
 window.addEventListener('load', updateScrollBtn); 
 
 
-
-// DRINK BOX
-const drinkScrollLeftBtn = document.getElementById("drink-left");
-const drinkScrollRightBtn = document.getElementById("drink-right");
+// DRINK SCROLL
 const drinkBox = document.querySelector('.drink-slider');
+const drinkCard = drinkBox.querySelector('.drink-card');
+const drinkLeft = document.getElementById('drink-left');
+const drinkRight = document.getElementById('drink-right');
 
-function getDrinkCardScrollAmount() {
-  const drinkCard = drinkBox.querySelector('.drink-card');
-  const styles = window.getComputedStyle(drinkCard);
-  const marginLeft = parseFloat(styles.marginLeft);
-  const marginRight = parseFloat(styles.marginRight);
-  return drinkCard.offsetWidth + marginLeft + marginRight;
-}
-
-drinkScrollLeftBtn.addEventListener("click", () => {
-  drinkBox.scrollBy({ left: -getDrinkCardScrollAmount(), behavior: "smooth" });
+drinkLeft.addEventListener('click', () => {
+  const scrollAmount = getCardScrollAmount(drinkCard);
+  drinkBox.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
 });
 
-drinkScrollRightBtn.addEventListener("click", () => {
-  drinkBox.scrollBy({ left: getDrinkCardScrollAmount(), behavior: "smooth" });
+drinkRight.addEventListener('click', () => {
+  const scrollAmount = getCardScrollAmount(drinkCard);
+  drinkBox.scrollBy({ left: scrollAmount, behavior: 'smooth' });
 });
 
-// FOOD BOX
-const foodScrollLeftBtn = document.getElementById("food-left");
-const foodScrollRightBtn = document.getElementById("food-right");
+// FOOD SCROLL
 const foodBox = document.querySelector('.food-slider');
+const foodCard = foodBox.querySelector('.food-card');
+const foodLeft = document.getElementById('food-left');
+const foodRight = document.getElementById('food-right');
 
-function getFoodCardScrollAmount() {
-  const foodCard = foodBox.querySelector('.food-card');
-  const styles = window.getComputedStyle(foodCard);
-  const marginLeft = parseFloat(styles.marginLeft);
-  const marginRight = parseFloat(styles.marginRight);
-  return foodCard.offsetWidth + marginLeft + marginRight;
+foodLeft.addEventListener('click', () => {
+  const scrollAmount = getCardScrollAmount(foodCard);
+  foodBox.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+});
+
+foodRight.addEventListener('click', () => {
+  const scrollAmount = getCardScrollAmount(foodCard);
+  foodBox.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+});
+
+// CALCULATE WIDTH OF A CARD INCLUDING MARGINS
+function getCardScrollAmount(card) {
+  const style = window.getComputedStyle(card);
+  const marginLeft = parseFloat(style.marginLeft) || 0;
+  const marginRight = parseFloat(style.marginRight) || 0;
+  return card.offsetWidth + marginLeft + marginRight;
 }
-
-foodScrollLeftBtn.addEventListener("click", () => {
-  foodBox.scrollBy({ left: -getFoodCardScrollAmount(), behavior: "smooth" });
-});
-
-foodScrollRightBtn.addEventListener("click", () => {
-  foodBox.scrollBy({ left: getFoodCardScrollAmount(), behavior: "smooth" });
-});
-
-
-
-
-
 
 
 let lastTouch = 0;
