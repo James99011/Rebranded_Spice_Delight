@@ -16,7 +16,11 @@ body {
 
 html, body {
   scroll-behavior: smooth;
-  overscroll-behavior: contain;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  user-select: none;
 }
 
 /* ✅ NAVBAR */
@@ -316,11 +320,11 @@ html, body {
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  gap: 15px;
+  gap: 1rem;
   padding: 20px 0;
   scrollbar-width: none;
   white-space: nowrap;
-  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
 }
 
 .drink-slider::-webkit-scrollbar {
@@ -515,7 +519,7 @@ html, body {
   scrollbar-width: none;
   padding: 10px 0;
   white-space: nowrap;
-  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
 }
 
 
