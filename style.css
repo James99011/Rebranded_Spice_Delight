@@ -11,6 +11,7 @@ body {
   overflow-x: hidden;
   touch-action: manipulation;
   overscroll-behavior: none;
+  touch-action: pan-y;
 }
 
 html, body {
@@ -319,6 +320,7 @@ html, body {
   padding: 20px 0;
   scrollbar-width: none;
   white-space: nowrap;
+  touch-action: pan-x;
 }
 
 .drink-slider::-webkit-scrollbar {
@@ -513,6 +515,7 @@ html, body {
   scrollbar-width: none;
   padding: 10px 0;
   white-space: nowrap;
+  touch-action: pan-x;
 }
 
 
