@@ -477,6 +477,7 @@ html, body {
   color: #333;
   border-radius: 5px;
   cursor: pointer;
+  width: 100%;
 }
 
 /* Show only on mobile */
@@ -488,14 +489,6 @@ html, body {
   .scroll-btn {
     display: none;
   }
-
-  .scroll-buttons.drink-scroll-buttons {
-    width: 100%; 
-  }
-
-   .scroll-buttons.drink-scroll-buttons button {
-    flex-grow: 1;
-   }
 }
 
 
