@@ -465,14 +465,7 @@ html, body {
   margin-top: 10px;
 }
 
-.scroll-buttons.drink-scroll-buttons {
-  width: 100%; /* Makes it 375px wide, matching parent */
-  /* If you want it to visually extend beyond parent padding: */
-  /* margin-left: -20px; */
-  /* margin-right: -20px; */
-  /* padding: 0 20px; /* Add padding back if margins are used */
-  box-sizing: border-box; /* Ensure padding is included in the width */
-}
+
 
 
 
@@ -497,10 +490,12 @@ html, body {
   }
 
   .scroll-buttons.drink-scroll-buttons {
-    width: 100%;
-    box-sizing: border-box; 
-    flex-grow: 1;
+    width: 100%; 
   }
+
+   .scroll-buttons.drink-scroll-buttons button {
+    flex-grow: 1;
+   }
 }
 
 
