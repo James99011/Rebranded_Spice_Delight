@@ -488,16 +488,6 @@ html, body {
 
 
 
-
-
-
-
-
-
-
-
-
-
  /* Food Section */
 .food-section {
   padding: 60px 20px;
@@ -654,20 +644,6 @@ html, body {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .marquee-container {
   width: 100%;
   overflow-x: hidden;
@@ -798,9 +774,6 @@ html, body {
 
 }
 
-
-
-
 .chef-section {
   background-color: #fbe9e7;
   padding: 60px 20px;
@@ -869,3 +842,6 @@ html, body {
 }
 
 
+html, body {
+  overflow-x: hidden !important;
+}
