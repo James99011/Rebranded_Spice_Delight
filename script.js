@@ -189,41 +189,55 @@ document.addEventListener('touchend', function(event) {
  */
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
-    const drinkSlider = document.querySelector('.drink-slider');
-    const leftBtn = document.getElementById('drink-left');
-    const rightBtn = document.getElementById('drink-right');
+  const drinkSlider = document.querySelector('.drink-slider');
+  const leftBtn = document.getElementById('drink-left');
+  const rightBtn = document.getElementById('drink-right');
 
-    leftBtn.addEventListener('click', () => {
-        const cardWidth = drinkSlider.querySelector('.drink-card').offsetWidth;
-        const scrollDistance = cardWidth + 16; // 1rem gap
+  const scrollToPosition = (element, to, duration) => {
+    const start = element.scrollLeft;
+    const change = to - start;
+    let currentTime = 0;
+    const increment = 20; // Time in ms between each step of the animation
 
-        // Calculate the target scroll position
-        const newScrollPos = drinkSlider.scrollLeft - scrollDistance;
+    const animateScroll = () => {
+      currentTime += increment;
+      const val = Math.easeInOutQuad(currentTime, start, change, duration);
+      element.scrollLeft = val;
+      if (currentTime < duration) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
 
-        // Animate the scroll smoothly
-        drinkSlider.scrollTo({
-            left: newScrollPos,
-            behavior: 'smooth'
-        });
-    });
+    // Easing function for a smooth start and end
+    Math.easeInOutQuad = (t, b, c, d) => {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    };
 
-    rightBtn.addEventListener('click', () => {
-        const cardWidth = drinkSlider.querySelector('.drink-card').offsetWidth;
-        const scrollDistance = cardWidth + 16; // 1rem gap
+    animateScroll();
+  };
 
-        // Calculate the target scroll position
-        const newScrollPos = drinkSlider.scrollLeft + scrollDistance;
+  leftBtn.addEventListener('click', () => {
+    const cardWidth = drinkSlider.querySelector('.drink-card').offsetWidth;
+    const scrollDistance = cardWidth + 16;
+    const newScrollPos = drinkSlider.scrollLeft - scrollDistance;
+    
+    // Set a duration in milliseconds (e.g., 500ms for a slower scroll)
+    scrollToPosition(drinkSlider, newScrollPos, 500);
+  });
 
-        // Animate the scroll smoothly
-        drinkSlider.scrollTo({
-            left: newScrollPos,
-            behavior: 'smooth'
-        });
-    });
+  rightBtn.addEventListener('click', () => {
+    const cardWidth = drinkSlider.querySelector('.drink-card').offsetWidth;
+    const scrollDistance = cardWidth + 16;
+    const newScrollPos = drinkSlider.scrollLeft + scrollDistance;
+    
+    // Set a duration in milliseconds (e.g., 500ms for a slower scroll)
+    scrollToPosition(drinkSlider, newScrollPos, 500);
+  });
 });
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
