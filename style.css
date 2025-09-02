@@ -245,6 +245,10 @@ html, body {
     gap: 12px;
   }
 
+  #toggleSymbol {
+    font-size: 3.5rem !important;
+  }
+
   .nav-left, .nav-center {
     flex: 1;
   }
@@ -259,14 +263,6 @@ html, body {
     text-align: center;
   }
 }
-
-@media (max-width: 577px) {
-  .toggle-btn {
-    display: block;
-    gap: 12px;
-  }
-}
-
 
 #cartCount {
   font-size: 20px;
