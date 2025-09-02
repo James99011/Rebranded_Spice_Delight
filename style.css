@@ -268,7 +268,7 @@ html, body {
 .toggle-btn {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 12px;
   font-size: 20px;
   background: none;
   border: none;
@@ -280,7 +280,7 @@ html, body {
 
 #toggleSymbol {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 3.5rem;
   height: 40px;
   width: 40px;
   display: flex;
@@ -290,10 +290,6 @@ html, body {
   padding: 5px 7px;
   border-radius: 50%;
 }
-
-/* .toggle-btn, #toggleSymbol {
-
-} */
 
 #cartCount {
   font-size: 20px;
