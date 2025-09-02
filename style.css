@@ -477,7 +477,7 @@ html, body {
   color: #333;
   border-radius: 5px;
   cursor: pointer;
-  width: 100%;
+  /* width: 100%; */
 }
 
 /* Show only on mobile */
