@@ -242,6 +242,7 @@ html, body {
 
   .toggle-btn {
     display: block;
+    gap: 12px;
   }
 
   .nav-left, .nav-center {
@@ -258,6 +259,14 @@ html, body {
     text-align: center;
   }
 }
+
+@media (max-width: 577px) {
+  .toggle-btn {
+    display: block;
+    gap: 12px;
+  }
+}
+
 
 #cartCount {
   font-size: 20px;
