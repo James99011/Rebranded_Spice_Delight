@@ -190,6 +190,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Select the necessary elements
+    const foodSlider = document.querySelector('.food-slider');
+    const leftBtn = document.getElementById('food-left');
+    const rightBtn = document.getElementById('food-right');
+
+    // Add event listeners to the scroll buttons
+    leftBtn.addEventListener('click', () => {
+        // Calculate the width of one card, including the gap
+        const cardWidth = foodSlider.querySelector('.food-card').offsetWidth;
+        const gap = 35; // The gap is 35px from your CSS
+        const scrollAmount = cardWidth + gap;
+
+        // Scroll the slider to the left
+        foodSlider.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+
+    rightBtn.addEventListener('click', () => {
+        // Calculate the width of one card, including the gap
+        const cardWidth = foodSlider.querySelector('.food-card').offsetWidth;
+        const gap = 35; // The gap is 35px from your CSS
+        const scrollAmount = cardWidth + gap;
+
+        // Scroll the slider to the right
+        foodSlider.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+});
 
 
 
