@@ -497,6 +497,10 @@ html, body {
   .scroll-btn {
     display: none;
   }
+
+  .order-btn {
+    padding: 15px 20px;
+  }
 }
 
 
@@ -666,6 +670,10 @@ html, body {
   .food-title {
   font-size: 1rem;
   margin: 12px 0 5px;
+  }
+
+  .food-btn {
+    padding: 15px 20px;
   }
 }
 
