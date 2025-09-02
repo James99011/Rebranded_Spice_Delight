@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const newScrollPos = drinkSlider.scrollLeft - scrollDistance;
     
     // Set a duration in milliseconds (e.g., 500ms for a slower scroll)
-    scrollToPosition(drinkSlider, newScrollPos, 500);
+    scrollToPosition(drinkSlider, newScrollPos, 300);
   });
 
   rightBtn.addEventListener('click', () => {
@@ -235,44 +235,65 @@ document.addEventListener('DOMContentLoaded', () => {
     const newScrollPos = drinkSlider.scrollLeft + scrollDistance;
     
     // Set a duration in milliseconds (e.g., 500ms for a slower scroll)
-    scrollToPosition(drinkSlider, newScrollPos, 500);
+    scrollToPosition(drinkSlider, newScrollPos, 300);
   });
 });
 
 
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Select the necessary elements
-    const foodSlider = document.querySelector('.food-slider');
-    const leftBtn = document.getElementById('food-left');
-    const rightBtn = document.getElementById('food-right');
+  const foodSlider = document.querySelector('.food-slider');
+  const leftBtn = document.getElementById('food-left');
+  const rightBtn = document.getElementById('food-right');
 
-    // Add event listeners to the scroll buttons
-    leftBtn.addEventListener('click', () => {
-        // Calculate the width of one card, including the gap
-        const cardWidth = foodSlider.querySelector('.food-card').offsetWidth;
-        const gap = 35; // The gap is 35px from your CSS
-        const scrollAmount = cardWidth + gap;
+  const scrollToPosition = (element, to, duration) => {
+    const start = element.scrollLeft;
+    const change = to - start;
+    let currentTime = 0;
+    const increment = 20; // Time in ms between each step of the animation
 
-        // Scroll the slider to the left
-        foodSlider.scrollBy({
-            left: -scrollAmount,
-            behavior: 'smooth'
-        });
-    });
+    const animateScroll = () => {
+      currentTime += increment;
+      const val = Math.easeInOutQuad(currentTime, start, change, duration);
+      element.scrollLeft = val;
+      if (currentTime < duration) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
 
-    rightBtn.addEventListener('click', () => {
-        // Calculate the width of one card, including the gap
-        const cardWidth = foodSlider.querySelector('.food-card').offsetWidth;
-        const gap = 35; // The gap is 35px from your CSS
-        const scrollAmount = cardWidth + gap;
+    // Easing function for a smooth start and end
+    Math.easeInOutQuad = (t, b, c, d) => {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    };
 
-        // Scroll the slider to the right
-        foodSlider.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
-    });
+    animateScroll();
+  };
+
+  leftBtn.addEventListener('click', () => {
+    const cardWidth = foodSlider.querySelector('.food-card').offsetWidth;
+    const scrollDistance = cardWidth + 35;
+    const newScrollPos = foodSlider.scrollLeft - scrollDistance;
+    
+    // Set a duration in milliseconds (e.g., 500ms for a slower scroll)
+    scrollToPosition(foodSlider, newScrollPos, 300);
+  });
+
+  rightBtn.addEventListener('click', () => {
+    const cardWidth = foodSlider.querySelector('.food-card').offsetWidth;
+    const scrollDistance = cardWidth + 35;
+    const newScrollPos = foodSlider.scrollLeft + scrollDistance;
+    
+    // Set a duration in milliseconds (e.g., 500ms for a slower scroll)
+    scrollToPosition(foodSlider, newScrollPos, 300);
+  });
 });
+
+
 
 
 
