@@ -353,11 +353,13 @@ html, body {
   justify-content: space-between;
   align-items: center;
 }
-/* 
-@media (max-width: 577px) {
- 
 
-} */
+@media (max-width: 577px) {
+   .drink-slider {
+     scroll-snap-type:none;
+   }
+
+} 
 
 
 @media (min-width: 768px) {
