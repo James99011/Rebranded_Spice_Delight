@@ -520,7 +520,7 @@ html, body {
 
 .food-slider {
   display: flex;
-  overflow-x: auto;
+  overflow-x: scroll;
   gap: 35px;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
@@ -553,6 +553,13 @@ html, body {
 }
 
 
+
+@media (max-width: 577px) {
+   .food-slider {
+     scroll-snap-type:none;
+   }
+
+} 
 
 
 
