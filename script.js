@@ -139,49 +139,6 @@ foodSlider.addEventListener('scroll', updateScrollBtn);
 window.addEventListener('load', updateScrollBtn); 
 
 
-// ========== UNIVERSAL CARD SCROLLER ========== //
-function setupCardScroller({ leftBtnId, rightBtnId, sliderClass, cardClass }) {
-  const scrollBox = document.querySelector(`.${sliderClass}`);
-  const scrollLeftBtn = document.getElementById(leftBtnId);
-  const scrollRightBtn = document.getElementById(rightBtnId);
-
-  function getCardWidth() {
-    const card = scrollBox.querySelector(`.${cardClass}`);
-    if (!card) return 0;
-    
-    const cardRect = card.getBoundingClientRect();
-    const styles = window.getComputedStyle(card);
-    const marginLeft = parseFloat(styles.marginLeft);
-    const marginRight = parseFloat(styles.marginRight);
-
-    return cardRect.width + marginLeft + marginRight;
-    console.log("Scroll width:", cardRect.width, "Margins:", marginLeft, marginRight);
-  }
-
-  scrollLeftBtn.addEventListener("click", () => {
-    scrollBox.scrollBy({ left: -getCardWidth(), behavior: "smooth" });
-  });
-
-  scrollRightBtn.addEventListener("click", () => {
-    scrollBox.scrollBy({ left: getCardWidth(), behavior: "smooth" });
-  });
-}
-
-// Set up for food
-setupCardScroller({
-  leftBtnId: "food-left",
-  rightBtnId: "food-right",
-  sliderClass: "food-slider",
-  cardClass: "food-card"
-});
-
-// Set up for drinks
-setupCardScroller({
-  leftBtnId: "drink-left",
-  rightBtnId: "drink-right",
-  sliderClass: "drink-slider",
-  cardClass: "drink-card"
-});
 
 
 let lastTouch = 0;
@@ -192,6 +149,68 @@ document.addEventListener('touchend', function(event) {
   }
   lastTouch = now;
 }, { passive: false });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Select the necessary elements
+    const drinkSlider = document.querySelector('.drink-slider');
+    const leftBtn = document.getElementById('drink-left');
+    const rightBtn = document.getElementById('drink-right');
+
+    // Add event listeners to the scroll buttons
+    leftBtn.addEventListener('click', () => {
+        // Calculate the width of one card, including the gap
+        const cardWidth = drinkSlider.querySelector('.drink-card').offsetWidth;
+        const gap = 16; // The gap is 1rem from your CSS, which is 16px by default
+        const scrollAmount = cardWidth + gap;
+
+        // Scroll the slider to the left
+        drinkSlider.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+
+    rightBtn.addEventListener('click', () => {
+        // Calculate the width of one card, including the gap
+        const cardWidth = drinkSlider.querySelector('.drink-card').offsetWidth;
+        const gap = 16; // The gap is 1rem from your CSS, which is 16px by default
+        const scrollAmount = cardWidth + gap;
+
+        // Scroll the slider to the right
+        drinkSlider.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

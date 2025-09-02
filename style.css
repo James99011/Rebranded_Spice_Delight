@@ -323,7 +323,7 @@ html, body {
 
 .drink-slider {
   display: flex;
-  overflow-x: auto;
+  overflow-x: scroll;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   gap: 1rem;
@@ -331,6 +331,7 @@ html, body {
   scrollbar-width: none;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
+ 
 }
 
 .drink-slider::-webkit-scrollbar {
@@ -352,7 +353,11 @@ html, body {
   justify-content: space-between;
   align-items: center;
 }
+/* 
+@media (max-width: 577px) {
+ 
 
+} */
 
 
 @media (min-width: 768px) {
