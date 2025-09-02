@@ -151,7 +151,7 @@ document.addEventListener('touchend', function(event) {
 }, { passive: false });
 
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
     // Select the necessary elements
     const drinkSlider = document.querySelector('.drink-slider');
     const leftBtn = document.getElementById('drink-left');
@@ -186,8 +186,43 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+ */
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const drinkSlider = document.querySelector('.drink-slider');
+    const leftBtn = document.getElementById('drink-left');
+    const rightBtn = document.getElementById('drink-right');
+
+    leftBtn.addEventListener('click', () => {
+        const cardWidth = drinkSlider.querySelector('.drink-card').offsetWidth;
+        const scrollDistance = cardWidth + 16; // 1rem gap
+
+        // Calculate the target scroll position
+        const newScrollPos = drinkSlider.scrollLeft - scrollDistance;
+
+        // Animate the scroll smoothly
+        drinkSlider.scrollTo({
+            left: newScrollPos,
+            behavior: 'smooth'
+        });
+    });
+
+    rightBtn.addEventListener('click', () => {
+        const cardWidth = drinkSlider.querySelector('.drink-card').offsetWidth;
+        const scrollDistance = cardWidth + 16; // 1rem gap
+
+        // Calculate the target scroll position
+        const newScrollPos = drinkSlider.scrollLeft + scrollDistance;
+
+        // Animate the scroll smoothly
+        drinkSlider.scrollTo({
+            left: newScrollPos,
+            behavior: 'smooth'
+        });
+    });
+});
 
 
 

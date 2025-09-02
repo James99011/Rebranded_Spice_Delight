@@ -324,7 +324,7 @@ html, body {
 
 .drink-slider {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   gap: 1rem;
@@ -357,7 +357,7 @@ html, body {
 @media (max-width: 577px) {
    .drink-slider {
      scroll-snap-type:none;
-     overflow-x: scroll;
+     overflow-x: hidden;
    }
 
 } 
