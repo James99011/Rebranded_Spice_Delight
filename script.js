@@ -150,7 +150,7 @@ document.addEventListener('touchend', function(event) {
   lastTouch = now;
 }, { passive: false });
 
-/* 
+
 document.addEventListener('DOMContentLoaded', () => {
     // Select the necessary elements
     const drinkSlider = document.querySelector('.drink-slider');
@@ -184,40 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
- */
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const drinkSlider = document.querySelector('.drink-slider');
-    const leftBtn = document.getElementById('drink-left');
-    const rightBtn = document.getElementById('drink-right');
-
-    const scrollSmoothly = (direction) => {
-        // Find the width of a single card, accounting for potential flex-basis
-        const card = drinkSlider.querySelector('.drink-card');
-        if (!card) return; // Exit if no card is found
-
-        const cardWidth = card.offsetWidth;
-        const gap = 16; // 1rem in CSS
-        const scrollAmount = cardWidth + gap;
-
-        // Perform the smooth scroll
-        drinkSlider.scrollBy({
-            left: direction * scrollAmount,
-            behavior: 'smooth'
-        });
-    };
-
-    leftBtn.addEventListener('click', () => {
-        scrollSmoothly(-1);
-    });
-
-    rightBtn.addEventListener('click', () => {
-        scrollSmoothly(1);
-    });
-});
-
 
 
 
