@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const newScrollPos = drinkSlider.scrollLeft - scrollDistance;
     
     // Set a duration in milliseconds (e.g., 500ms for a slower scroll)
-    scrollToPosition(drinkSlider, newScrollPos, 300);
+    scrollToPosition(drinkSlider, newScrollPos, 200);
   });
 
   rightBtn.addEventListener('click', () => {
@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const newScrollPos = drinkSlider.scrollLeft + scrollDistance;
     
     // Set a duration in milliseconds (e.g., 500ms for a slower scroll)
-    scrollToPosition(drinkSlider, newScrollPos, 300);
+    scrollToPosition(drinkSlider, newScrollPos, 200);
   });
 });
 
@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const newScrollPos = foodSlider.scrollLeft - scrollDistance;
     
     // Set a duration in milliseconds (e.g., 500ms for a slower scroll)
-    scrollToPosition(foodSlider, newScrollPos, 300);
+    scrollToPosition(foodSlider, newScrollPos, 200);
   });
 
   rightBtn.addEventListener('click', () => {
@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const newScrollPos = foodSlider.scrollLeft + scrollDistance;
     
     // Set a duration in milliseconds (e.g., 500ms for a slower scroll)
-    scrollToPosition(foodSlider, newScrollPos, 300);
+    scrollToPosition(foodSlider, newScrollPos, 200);
   });
 });
 
