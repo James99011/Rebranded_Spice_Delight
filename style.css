@@ -1361,8 +1361,8 @@ html, body {
 
 
 /* ✅ Newsletter Section */
-.newsletter {
-  background-color: #0077cc; /* Spice Delight blue */
+/* .newsletter {
+  background-color: #0077cc;
   color: #fff;
   padding: 4rem 2rem;
   text-align: center;
@@ -1417,9 +1417,9 @@ html, body {
   background-color: #005fa3;
   color: #fff;
 }
-
+ */
 /* ✅ Mobile Layout */
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .newsletter-form {
     flex-direction: column;
     gap: 1rem;
@@ -1429,6 +1429,84 @@ html, body {
   .newsletter-form button {
     width: 100%;
   }
+} */
+
+
+/* Newsletter Section */
+.newsletter {
+  background: #f5faff; /* soft blue background */
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.newsletter-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.newsletter h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #003366; /* dark blue */
+}
+
+.newsletter p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 65%;
+  outline: none;
+}
+
+.newsletter-form input[type="email"]:focus {
+  border-color: #003366;
+  box-shadow: 0 0 6px rgba(0, 51, 102, 0.3);
+}
+
+.newsletter-button input[type="submit"] {
+  background: #003366;
+  color: white;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter-button input[type="submit"]:hover {
+  background: #0055aa;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .newsletter-form {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .newsletter-form input[type="email"] {
+    width: 100%;
+  }
+
+  .newsletter-button input[type="submit"] {
+    width: 100%;
+  }
 }
 
 
@@ -1436,10 +1514,7 @@ html, body {
 
 
 
-
-
 /* 
-
 html, body {
   overflow-x: hidden !important;
-} */
+}  */
