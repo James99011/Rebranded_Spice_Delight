@@ -29,6 +29,53 @@ html, body {
   transform: translateZ(0);
 }
 
+
+
+
+
+/* Fix header ONLY on tablet and mobile */
+/* @media (max-width: 1024px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #003366; 
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+  }
+
+  body {
+    padding-top: 80px;
+  }
+} */
+
+/* Tablet & Mobile only */
+@media (max-width: 1024px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #003366; /* your header color */
+    z-index: 1000;
+    transition: all 0.3s ease;
+    padding: 20px 15px; /* normal size */
+  }
+
+  /* Shrinked header */
+  header.shrink {
+    padding: 10px 15px; /* smaller height when scrolled */
+    background: #002244; /* slightly darker on scroll */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  body {
+    padding-top: 80px; /* initial header height */
+  }
+}
+
 /* ✅ NAVBAR */
 .navbar {
   width: 100%;
@@ -42,6 +89,8 @@ html, body {
   left: 0;
   z-index: 1000;
 }
+
+
 
 
 .nav-left,
@@ -1510,8 +1559,158 @@ html, body {
 }
 
 
+/* ✅ FOOTER */
+.footer {
+  position: relative;
+  overflow: hidden; /* keep rain inside */
+  background: linear-gradient(to right, #003366, #004080);
+  color: white;
+  padding: 3rem 2rem 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Rain Layer */
+.rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 2px 50px;
+  animation: rainFall 3s linear infinite;
+  opacity: 0.3; /* subtle, not too harsh */
+}
+
+@keyframes rainFall {
+  from {
+    background-position: 0 -50px;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2; /* make sure text stays above rain */
+}
+
+.footer h2.footer-logo {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #FFD700;
+}
+
+.footer h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #FFD700;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin: 0.5rem 0;
+}
+
+.footer ul li a {
+  color: #f0f0f0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+  color: #FFD700;
+}
+
+/* Contact Links */
+.footer p a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+.footer .socials a {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: white;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer .socials a:hover {
+  transform: scale(1.2);
+  color: #FFD700;
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.9rem;
+  z-index: 2;
+  position: relative;
+}
 
 
+/* Scroll-to-Top Button */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: #FFD700; /* gold */
+  color: #003366;      /* dark blue arrow */
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  z-index: 999;
+  opacity: 0;         
+  pointer-events: none;
+}
+
+/* Hover effect */
+#scrollTopBtn:hover {
+  background: #FFC107; 
+  transform: scale(1.1);
+}
+
+/* Visible state */
+#scrollTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+  animation: glowPulse 2s infinite ease-in-out;
+}
+
+/* Glow Pulse Animation */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 5px #fff, 0 0 10px #b0dffb, 0 0 15px #b0dffb;
+  }
+  50% {
+    box-shadow: 0 0 20px #fff, 0 0 40px #b0dffb, 0 0 60px #b0dffb;
+  }
+  100% {
+    box-shadow: 0 0 5px #fff, 0 0 10px #b0dffb, 0 0 15px #b0dffb;
+  }
+}
 
 
 /* 

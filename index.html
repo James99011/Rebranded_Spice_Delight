@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
@@ -40,10 +41,8 @@
       </div>
     </nav>
 
-    
-  </header>
-   
-  <!-- Mobile dropdown menu -->
+
+    <!-- Mobile dropdown menu -->
     <div class="mobile-menu" id="mobileMenu">
       <ul>
         <li><a href="#">Shop</a></li>
@@ -53,6 +52,11 @@
         <li><a href="#">Cart 🛒</a></li>
       </ul>
     </div>
+
+    
+  </header>
+   
+  
 
 
 
@@ -528,6 +532,57 @@
   </section>
 
 
+    <!-- ✅ FOOTER SECTION -->
+  <footer class="footer" id="footer">
+    <!-- Falling Rain Animation Layer -->
+    <div class="rain"></div>
+
+    <div class="footer-container">
+      <!-- Logo + About -->
+      <div class="footer-col">
+        <h2 class="footer-logo">SpiceDelight</h2>
+        <p class="footer-about">
+          Bringing you tasty meals and refreshing drinks with love, crafted by our chefs.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:jaytech99011@email.com">jaytech99011@gmail.com</a></p>
+        <p>Phone: <a href="tel:+2349076956478">+234 907 695 6478</a></p>
+        <p>Location: 123 Flavor Street, Lagos, Nigeria</p>
+      </div>
+
+      <!-- Socials -->
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="socials">
+          <a href="https://www.facebook.com/share/16rsK7iNHA/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/jaytechwebsolutions?igsh=MWw2dGFybTJkYmx6cQ=="><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/2349076956478"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://youtube.com/@jegedejames?si=kKVHFk4WWXPYfDnZ"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p>© 2025 Spice Delight. All Rights Reserved.</p>
+    </div>
+  </footer>
 
 
 
@@ -561,13 +616,21 @@
 
 
 
+<!-- Scroll-to-Top Button -->
+<button id="scrollTopBtn">
+  <i class="fas fa-arrow-up"></i>
+</button>
 
-
-
-
-
-
-
+<script>
+  window.addEventListener("scroll", function() {
+    const header = document.querySelector("header");
+    if (window.scrollY > 50) {
+      header.classList.add("shrink");
+    } else {
+      header.classList.remove("shrink");
+    }
+  });
+</script>
 
 <!-- AOS JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
