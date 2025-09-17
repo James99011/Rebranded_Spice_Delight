@@ -1,0 +1,334 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fefefe;
+  overflow-x: hidden !important;
+  touch-action: manipulation;
+  overscroll-behavior: none;
+  touch-action: pan-y;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+
+
+/* Tablet & Mobile only */
+@media (max-width: 1024px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #003366; /* your header color */
+    z-index: 1000;
+    transition: all 0.3s ease;
+    padding: 10px 5px; /* normal size */
+  }
+
+  /* Shrinked header */
+  header.shrink {
+    padding: 6px 7px; /* smaller height when scrolled */
+    background: #002244; /* slightly darker on scroll */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  body {
+    padding-top: 80px; /* initial header height */
+  }
+}
+
+/* ✅ NAVBAR */
+.navbar {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+
+
+
+.nav-left,
+.nav-right {
+  display: none;
+}
+
+.nav-center {
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #3a3a3a;
+}
+
+
+/* Mobile navbar */
+@media (max-width: 767px) {
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-right {
+    display: none;
+  }
+
+  .nav-center {
+    flex: 1;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+/* NAVBAR DEFAULT STYLING */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: white;
+  position: relative;
+  z-index: 1000;
+}
+
+/* LOGO */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #004080; /* deep blue or change as needed */
+}
+
+/* TOGGLE BUTTON (+ / ×) */
+.toggle-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #004080;
+}
+
+/* DESKTOP MENU */
+.desktop-menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.desktop-menu li a {
+  text-decoration: none;
+  color: #004080;
+  font-weight: bold;
+}
+
+/* MOBILE MENU DROPDOWN */
+.mobile-menu {
+  display: none;
+  background-color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.mobile-menu.show {
+  display: block;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu li {
+  margin-bottom: 15px;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #004080;
+  font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .toggle-btn {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none !important;
+  }
+
+  .desktop-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .toggle-btn {
+    display: block;
+    gap: 12px;
+  }
+
+  #toggleSymbol {
+    font-size: 3.5rem !important;
+  }
+
+  .nav-left, .nav-center {
+    flex: 1;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-center {
+    text-align: center;
+  }
+}
+
+#cartCount {
+  font-size: 20px;
+  margin-right: 5px;
+  color: #004080;
+}
+
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: #004080;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-left: 0px;
+}
+
+#toggleSymbol {
+  font-weight: bold;
+  font-size: 3.5rem;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 5px 7px;
+  border-radius: 50%;
+}
+
+#cartCount {
+  font-size: 20px;
+}
+
+
+
+.shop-hero {
+  background: url("images/pork-hock-german-with-sauces-dark-background.jpg") center/cover no-repeat;
+  text-align: center;
+  color: white;
+  padding: 100px 20px;
+}
+.shop-hero h1 { font-size: 2.5rem; }
+.shop-hero p { font-size: 1.2rem; margin: 10px 0; }
+.shop-hero .btn {
+  background: #ff6600;
+  color: #fff;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Menu Grid */
+.menu-section { padding: 50px 20px; }
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.menu-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+.menu-card:hover { transform: translateY(-5px); }
+.menu-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+.price {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #003366;
+}
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-left: 5px;
+}
+.add-to-cart {
+  background: #003366;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.add-to-cart:hover { background: #ff6600; }
+
+/* Badges */
+.badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  color: white;
+}
+.badge.sale { background: #e63946; }
+.badge.best { background: #ff9900; }
+.badge.new { background: #28a745; }

@@ -61,12 +61,12 @@ html, body {
     background: #003366; /* your header color */
     z-index: 1000;
     transition: all 0.3s ease;
-    padding: 20px 15px; /* normal size */
+    padding: 10px 5px; /* normal size */
   }
 
   /* Shrinked header */
   header.shrink {
-    padding: 10px 15px; /* smaller height when scrolled */
+    padding: 6px 7px; /* smaller height when scrolled */
     background: #002244; /* slightly darker on scroll */
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   }

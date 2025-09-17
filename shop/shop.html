@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpiceDelight</title>
+  <link rel="stylesheet" href="shop.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  
+  <header>
+    <!-- Navbar section -->
+    <nav class="navbar">
+     <!-- Left: Toggle Button and Cart Count -->
+      <div class="nav-left">
+        <button id="navToggle" class="toggle-btn">
+          <span id="toggleSymbol">+</span>
+          <span id="cartCount">(0)</span>
+        </button>
+      </div>
+
+      <!-- Center: Logo -->
+      <div class="nav-center">
+        <div class="logo">SpiceDelight</div>
+      </div>
+
+      <!-- Right: Menu for Laptop view -->
+      <div class="nav-right desktop-menu">
+        <ul>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Videos</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Cart 🛒</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <!-- Mobile dropdown menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Cart 🛒</a></li>
+      </ul>
+    </div>
+
+    
+  </header>
+   
+  
+
+
+  <section class="shop-hero">
+    <h1>Order Your Favorites</h1>
+    <p>Delicious meals delivered fresh to you</p>
+    <a href="#menu" class="btn">Browse Menu</a>
+  </section>
+
+  <section id="menu" class="menu-section">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+      <!-- Example Card -->
+      <div class="menu-card">
+        <span class="badge sale">Sale</span>
+        <img src="images/gallery-image.png" alt="Creamy Pasta">
+        <h3>Creamy Pasta</h3>
+        <p>Rich & cheesy Italian pasta</p>
+        <div class="price">$12 <span class="old-price">$15</span></div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="menu-card">
+        <span class="badge best">Best Seller</span>
+        <img src="images/gallery-image2.png" alt="Classic Burger">
+        <h3>Classic Burger</h3>
+        <p>Juicy beef patty with cheese</p>
+        <div class="price">$10</div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="menu-card">
+        <span class="badge new">New</span>
+        <img src="images/gallery-image3.png" alt="Chocolate Cake">
+        <h3>Chocolate Cake</h3>
+        <p>Soft, moist & chocolaty</p>
+        <div class="price">$8</div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="shop.js"></script>
+
+</body>
+</html>
