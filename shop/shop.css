@@ -18,9 +18,9 @@ html, body {
   scroll-behavior: smooth;
   overscroll-behavior: none;
   touch-action: manipulation;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-  user-select: none;
+  -webkit-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  user-select: none !important;
 }
 
 
