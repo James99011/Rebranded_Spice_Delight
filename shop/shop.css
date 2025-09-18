@@ -18,9 +18,9 @@ html, body {
   scroll-behavior: smooth;
   overscroll-behavior: none;
   touch-action: manipulation;
-  -webkit-user-select: none !important;
-  -webkit-touch-callout: none !important;
-  user-select: none !important;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  user-select: none;
 }
 
 
@@ -336,13 +336,3 @@ html, body {
 
 
 
-
-html, body {
-  overflow-x: hidden !important;
-  scroll-behavior: smooth;
-  overscroll-behavior: none;
-  touch-action: manipulation;
-  -webkit-user-select: none !important;
-  -webkit-touch-callout: none !important;
-  user-select: none !important;
-}  

@@ -35,3 +35,6 @@ function addToCart() {
 updateCartCount();
 
 
+document.addEventListener('gesturestart', function (e) {
+    e.preventDefault();
+});
