@@ -301,20 +301,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 window.addEventListener('load', function () {
   AOS.init({
   duration: 1000, // time in ms
@@ -341,6 +327,7 @@ scrollTopBtn.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
 
 
 
