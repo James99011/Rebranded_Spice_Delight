@@ -332,3 +332,17 @@ html, body {
 .badge.sale { background: #e63946; }
 .badge.best { background: #ff9900; }
 .badge.new { background: #28a745; }
+
+
+
+
+
+html, body {
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+  -webkit-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  user-select: none !important;
+}  
