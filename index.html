@@ -19,7 +19,7 @@
       <div class="nav-left">
         <button id="navToggle" class="toggle-btn">
           <span id="toggleSymbol">+</span>
-          <span id="cartCount">(0)</span>
+          <a href="shop/shop.html?openCart=true" class="cart-link"><span id="cartCount">(0)</span></a>
         </button>
       </div>
 
@@ -35,7 +35,7 @@
           <li><a href="#">Videos</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="#cart">Cart 🛒</a></li>
+          <li><a href="shop/shop.html?openCart=true" class="cart-link">Cart 🛒</a></li>
         </ul>
       </div>
     </nav>
@@ -48,11 +48,9 @@
         <li><a href="#">Videos</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
-        <li><a href="#cart">Cart 🛒</a></li>
+        <li><a href="shop/shop.html?openCart=true" class="cart-link">Cart 🛒</a></li>
       </ul>
     </div>
-
-    
   </header>
    
   
@@ -633,6 +631,7 @@
 
 <!-- AOS JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="global.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

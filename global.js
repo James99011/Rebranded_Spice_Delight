@@ -13,20 +13,32 @@ navToggle.addEventListener('click', () => {
 });
 
 
+  
+let cartCount = 0;
+let menuOpen = false;
 
-const cartSidebar = document.getElementById("cart-sidebar");
+const toggleSymbol = document.getElementById('toggleSymbol');
+const cartCountSpan = document.getElementById('cartCount');
+const navTogglee = document.getElementById('navToggle');
+
+function updateCartCount() {
+  cartCountSpan.textContent = `(${cartCount})`;
+}
+
+function addToCart() {
+  cartCount++;
+  updateCartCount();
+}
 
 
+// Initialize count on load
+updateCartCount();
 
 
-const cartToggle = document.getElementById("cart-toggle");
-const cartCountt = document.getElementById("cart-count");
-
-// Toggle cart sidebar
-cartToggle.addEventListener("click", () => {
-  cartSidebar.classList.toggle("active");
+// Prevent pinch zoom (gesture start)
+document.addEventListener('gesturestart', function (e) {
+    e.preventDefault();
 });
-
 
 
 
