@@ -113,42 +113,6 @@ document.addEventListener('touchend', function(event) {
 }, { passive: false });
 
 
-/* document.addEventListener('DOMContentLoaded', () => {
-    // Select the necessary elements
-    const drinkSlider = document.querySelector('.drink-slider');
-    const leftBtn = document.getElementById('drink-left');
-    const rightBtn = document.getElementById('drink-right');
-
-    // Add event listeners to the scroll buttons
-    leftBtn.addEventListener('click', () => {
-        // Calculate the width of one card, including the gap
-        const cardWidth = drinkSlider.querySelector('.drink-card').offsetWidth;
-        const gap = 16; // The gap is 1rem from your CSS, which is 16px by default
-        const scrollAmount = cardWidth + gap;
-
-        // Scroll the slider to the left
-        drinkSlider.scrollBy({
-            left: -scrollAmount,
-            behavior: 'smooth'
-        });
-    });
-
-    rightBtn.addEventListener('click', () => {
-        // Calculate the width of one card, including the gap
-        const cardWidth = drinkSlider.querySelector('.drink-card').offsetWidth;
-        const gap = 16; // The gap is 1rem from your CSS, which is 16px by default
-        const scrollAmount = cardWidth + gap;
-
-        // Scroll the slider to the right
-        drinkSlider.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
-    });
-});
-
-
- */
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -261,9 +225,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
 window.addEventListener('load', function () {
   AOS.init({
   duration: 1000, // time in ms
@@ -290,9 +251,6 @@ scrollTopBtn.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
-
-
-
 
 
 

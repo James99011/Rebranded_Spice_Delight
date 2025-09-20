@@ -19,8 +19,8 @@
       <div class="nav-left">
         <button id="navToggle" class="toggle-btn">
           <span id="toggleSymbol">+</span>
-          <a href="shop/shop.html?openCart=true" class="cart-link"><span id="cartCount">(0)</span></a>
         </button>
+        <a href="shop/shop.html?showCart=true" style="text-decoration: none;"><span id="cartCount">(0)</span></a>
       </div>
 
       <!-- Center: Logo -->
@@ -35,7 +35,7 @@
           <li><a href="#">Videos</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="shop/shop.html?openCart=true" class="cart-link">Cart 🛒</a></li>
+          <li><a href="shop/shop.html?showCart=true">Cart 🛒</a></li>
         </ul>
       </div>
     </nav>
@@ -48,7 +48,7 @@
         <li><a href="#">Videos</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
-        <li><a href="shop/shop.html?openCart=true" class="cart-link">Cart 🛒</a></li>
+        <li><a href="shop/shop.html?showCart=true">Cart 🛒</a></li>
       </ul>
     </div>
   </header>
@@ -78,100 +78,100 @@
     <button class="scroll-btn left-btn">&#10094;</button>
 
     <div class="drink-slider">
-      <div class="drink-card">
+      <div class="drink-card" data-name="Spritz Cocktail" data-price="4.99">
         <div class="drink-image-box">
           <img src="images/drink 2.png" alt="Glass of aperol spritz cocktail">
         </div>
         <h3>Spritz Cocktail</h3>
         <p class="price">$4.99</p>
-        <button onclick="addToCart()" class="order-btn">Order Now</button>
+        <button class="order-btn">Order Now</button>
       </div>
 
-      <div class="drink-card">
+      <div class="drink-card" data-name="Caramel Popcorn Milkshake" data-price="8.99">
         <div class="drink-image-box">
           <img src="images/drink 3.png" alt="Caramel popcorn milkshake">
         </div>
         <h3>Caramel Popcorn Milkshake</h3>
         <p class="price">$8.99</p>
-        <button onclick="addToCart()" class="order-btn">Order Now</button>
+        <button class="order-btn">Order Now</button>
       </div>
 
-      <div class="drink-card">
+      <div class="drink-card" data-name="Orange Juice with Mint" data-price="9.59">
         <div class="drink-image-box">
           <img src="images/drink 4.png" alt="Orange juice with mint">
         </div>
         <h3>Orange Juice with Mint</h3>
         <p class="price">$9.59</p>
-        <button onclick="addToCart()" class="order-btn">Order Now</button>
+        <button class="order-btn">Order Now</button>
       </div>
        
-      <div class="drink-card">
+      <div class="drink-card" data-name="Classic Cooling Mojito" data-price="12.59">
         <div class="drink-image-box">
           <img src="images/drink 6.png" alt="Classic cooling mojito">
         </div>
         <h3>Classic Cooling Mojito</h3>
         <p class="price">$12.59</p>
-        <button onclick="addToCart()" class="order-btn">Order Now</button>
+        <button class="order-btn">Order Now</button>
       </div>
 
       
-      <div class="drink-card">
+      <div class="drink-card" data-name="Mojito Cocktail" data-price="2.59">
         <div class="drink-image-box">
           <img src="images/drink 7.png" alt="Mojito cocktail realistic">
         </div>
         <h3>Mojito Cocktail</h3>
         <p class="price">$2.59</p>
-        <button onclick="addToCart()" class="order-btn">Order Now</button>
+        <button class="order-btn">Order Now</button>
       </div>
 
       
-      <div class="drink-card">
+      <div class="drink-card" data-name="Orange Juice" data-price="9.00">
         <div class="drink-image-box">
           <img src="images/drink 1.png" alt="Freshly squeezed orange juice">
         </div>
         <h3>Orange Juice</h3>
         <p class="price">$9.00</p>
-        <button onclick="addToCart()" class="order-btn">Order Now</button>
+        <button class="order-btn">Order Now</button>
       </div>
 
       
-      <div class="drink-card">
+      <div class="drink-card" data-name="Tasty bubble tea drink & peach" data-price="7.99">
         <div class="drink-image-box">
           <img src="images/drink 8.png" alt="Tasty bubble tea drink and peach">
         </div>
         <h3>Tasty bubble tea drink & peach</h3>
         <p class="price">$7.99</p>
-        <button onclick="addToCart()" class="order-btn">Order Now</button>
+        <button class="order-btn">Order Now</button>
       </div>
 
       
-      <div class="drink-card">
+      <div class="drink-card" data-name="Classic Paloma Cocktail" data-price="9.59">
         <div class="drink-image-box">
           <img src="images/drink 9.png" alt="Classic paloma cocktail isolated on white background. copy space">
         </div>
         <h3>Classic Paloma Cocktail</h3>
         <p class="price">$9.59</p>
-        <button onclick="addToCart()" class="order-btn">Order Now</button>
+        <button class="order-btn">Order Now</button>
       </div>
 
       
-      <div class="drink-card">
+      <div class="drink-card" data-name="Gin Tonic Cocktail" data-price="9.90">
         <div class="drink-image-box">
           <img src="images/drink 10.png" alt="Gin tonic cocktail drink into a glass isolated on white background copy space">
         </div>
         <h3>Gin Tonic Cocktail</h3>
         <p class="price">$9.90</p>
-        <button onclick="addToCart()" class="order-btn">Order Now</button>
+        <button class="order-btn">Order Now</button>
       </div>
 
       
-      <div class="drink-card">
+      <div class="drink-card" data-name="Cocktail with Apple Slices" data-price="9.59">
         <div class="drink-image-box">
           <img src="images/drink 11.png" alt="Front view refreshing cocktail with apple slices">
         </div>
         <h3>Cocktail with Apple Slices</h3>
         <p class="price">$9.59</p>
-        <button onclick="addToCart()" class="order-btn">Order Now</button>
+        <button class="order-btn">Order Now</button>
       </div>
     </div>
 
@@ -206,7 +206,7 @@
     <button class="scroll-button left-button">&#10094;</button>
 
       <div class="food-slider">
-        <div class="food-card">
+        <div class="food-card" data-name="Chicken Wings & Potatoes" data-price="5.34">
           <div class="food-img-box">
             <img src="images/food 1.png" alt="Chicken wings plate of the appetizing potatoes chicken wings onion herbs">
           </div>
@@ -215,7 +215,7 @@
           <button class="food-btn">Order Now</button>
         </div>
 
-        <div class="food-card">
+        <div class="food-card" data-name="Chicken Citruses & Spices" data-price="7.90">
           <div class="food-img-box">
             <img src="images/food 2.png" alt="Chicken with citruses and spices on white">
           </div>
@@ -224,7 +224,7 @@
           <button class="food-btn">Order Now</button>
         </div>
 
-        <div class="food-card">
+        <div class="food-card" data-name="Fried Rice & Salad with Chicken" data-price="6.33">
           <div class="food-img-box">
             <img src="images/food 3.jpg" alt="Fried rice with spicy chicken masala curry chicken leg vegetables and salad combo">
           </div>
@@ -233,7 +233,7 @@
           <button class="food-btn">Order Now</button>
         </div>
 
-        <div class="food-card">
+        <div class="food-card" data-name="Filipino Food Platter" data-price="4.56">
           <div class="food-img-box">
             <img src="images/food 4.png" alt="A delicious filipino food platter a feast for the senses">
           </div>
@@ -242,7 +242,7 @@
           <button class="food-btn">Order Now</button>
         </div>
 
-        <div class="food-card">
+        <div class="food-card" data-name="Grilled Meat with Rice & Vegetable" data-price="9.99">
           <div class="food-img-box">
             <img src="images/food 5.jpeg" alt="Grilled meat platter with rice and vegetables on a white plate celebrating traditional cuisine">
           </div>
@@ -251,7 +251,7 @@
           <button class="food-btn">Order Now</button>
         </div>
 
-        <div class="food-card">
+        <div class="food-card" data-name="Burger & French Fries" data-price="8.33">
           <div class="food-img-box">
             <img src="images/food 6.jpeg" alt="Western food-view of lamb chop set with burger and french fries isolated on white background">
           </div>
@@ -260,7 +260,7 @@
           <button class="food-btn">Order Now</button>
         </div>
 
-        <div class="food-card">
+        <div class="food-card" data-name="Fried Eggplants & Meat Cooked Rice" data-price="10.45">
           <div class="food-img-box">
             <img src="images/food 7.png" alt="Front view tasty fried eggplants with meat cooked rice and raisins on dark surface">
           </div>
@@ -269,7 +269,7 @@
           <button class="food-btn">Order Now</button>
         </div>
 
-        <div class="food-card">
+        <div class="food-card" data-name="Food Gourmet Comida Gastronomy" data-price="5.33">
           <div class="food-img-box">
             <img src="images/food 8.png" alt="Lifestyle food gourmet comida gastronomy">
           </div>
@@ -278,7 +278,7 @@
           <button class="food-btn">Order Now</button>
         </div>
 
-        <div class="food-card">
+        <div class="food-card" data-name="Spaghetti, pepper & chicken legs" data-price="6.00">
           <div class="food-img-box">
             <img src="images/food 9.png" alt="Boiled spaghetti, pepper and chicken legs on white plate">
           </div>
@@ -631,6 +631,7 @@
 
 <!-- AOS JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- <script src="cart.js"></script>  --> 
 <script src="global.js"></script>
 <script src="script.js"></script>
 </body>

@@ -1,18 +1,22 @@
-document.addEventListener('gesturestart', function (e) {
+/* document.addEventListener('gesturestart', function (e) {
     e.preventDefault();
 });
+ */
 
 
 
-
-
+/* 
 const cartToggle = document.getElementById("cart-toggle");
 const cartCountt = document.getElementById("cart-count");
 
-// Toggle cart sidebar
+
 cartToggle.addEventListener("click", () => {
   cartSidebar.classList.toggle("active");
 });
+
+ */
+
+
 
 
 
