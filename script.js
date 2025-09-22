@@ -257,7 +257,73 @@ scrollTopBtn.addEventListener("click", () => {
 
 
 
+// LANDING PAGE JS
 
+// --- Slider Logic (unchanged) ---
+// (Keep all your existing slider code here)
+
+// --- Cart Logic ---
+
+// Function to update the cart count in the header
+function updateHeaderCartCount() {
+    const headerCartCount = document.getElementById("cartCount");
+    if (headerCartCount) {
+        // Retrieve cart data from localStorage
+        const savedCart = localStorage.getItem('cart');
+        const cart = savedCart ? JSON.parse(savedCart) : [];
+
+        // Calculate total item count
+        const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+
+        // Update the display
+        headerCartCount.textContent = `(${itemCount})`;
+    }
+}
+
+// Event listeners for "Order Now" buttons
+document.querySelectorAll('.order-btn, .food-btn').forEach(button => {
+    button.addEventListener('click', (event) => {
+        // Prevent the default button action
+        event.preventDefault();
+
+        const card = button.closest('.drink-card') || button.closest('.food-card');
+        const name = card.getAttribute('data-name');
+        const price = parseFloat(card.getAttribute('data-price'));
+
+        // Get the current cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Check if item already exists in the cart
+        const existingItem = cart.find(item => item.name === name);
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            // Add the new item to the cart
+            cart.push({ name, price, quantity: 1 });
+        }
+
+        // Save the updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Update the cart count on the current page immediately
+        updateHeaderCartCount();
+
+        // Redirect to the shop page with a parameter to open the cart
+        window.location.href = 'shop/shop.html?showCart=true';
+    });
+});
+
+// The final fix: The 'pageshow' event listener.
+// This is the most reliable event for handling back/forward navigation.
+window.addEventListener('pageshow', (event) => {
+    // Check if the page is being loaded from the cache
+    if (event.persisted) {
+        // If so, force a fresh update
+        updateHeaderCartCount();
+    }
+    // Also, run the update on a normal page load
+    updateHeaderCartCount();
+});
 
 
 

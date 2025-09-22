@@ -43,7 +43,7 @@ if (isShopPage) {
   const cartToggle = document.getElementById("cart-toggle");
   const cartItems = document.getElementById("cart-items");
   const cartTotal = document.getElementById("cart-total");
-  let cart = [];
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
   // Add event listener for the floating cart toggle button
   if (cartToggle) {
@@ -103,6 +103,11 @@ if (isShopPage) {
     if (floatingCartCount) {
       floatingCartCount.textContent = itemCount;
     }
+
+    // Add this line to save the cart to local storage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+
   }
 
   // Change Quantity
