@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Videos - Spice Delight</title>
+  <link rel="stylesheet" href="video.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+ <!--  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+   <header>
+    <!-- Navbar section -->
+    <nav class="navbar">
+     <!-- Left: Toggle Button and Cart Count -->
+      <div class="nav-left">
+        <button id="navToggle" class="toggle-btn">
+          <span id="toggleSymbol">+</span>
+        </button>
+        <a href="../shop/shop.html?showCart=true" style="text-decoration: none;"><span id="cartCount">(0)</span></a>
+      </div>
+
+      <!-- Center: Logo -->
+      <div class="nav-center">
+        <a href="index.html"  style="text-decoration: none;"><div class="logo">SpiceDelight</div></a>
+      </div>
+
+      <!-- Right: Menu for Laptop view -->
+      <div class="nav-right desktop-menu">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../shop/shop.html">Shop</a></li>
+          <li><a href="video.html">Videos</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="../shop/shop.html?showCart=true">Cart 🛒</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <!-- Mobile dropdown menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../shop/shop.html">Shop</a></li>
+        <li><a href="video.html">Videos</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="../shop/shop.html?showCart=true">Cart 🛒</a></li>
+      </ul>
+    </div>
+  </header>
+   
+  
+
+
+
+
+  <section class="videos-header">
+    <h1>Our Videos 🎬</h1>
+    <p>Watch our recipes and tutorials in action!</p>
+  </section>
+
+  <!-- Filter Buttons -->
+  <div class="video-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="recipes">Recipes</button>
+    <button class="filter-btn" data-filter="tutorials">Tutorials</button>
+    <button class="filter-btn" data-filter="drinks">Drinks</button>
+  </div>
+
+  <!-- Video Gallery -->
+  <section class="video-gallery">
+    <!-- Video 1 -->
+    <div class="video-item" data-category="recipes" data-video="https://www.youtube.com/embed/Fvj0OCdV0QA?si=lS6QjUj7P20u75a3">
+      <img src="image/youtube_thumbnail3.jpg" alt="Video 1">
+      <div class="play-button">▶</div>
+      <p class="video-title">Italian Dish</p>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-item" data-category="recipes" data-video="https://www.youtube.com/embed/TEtEUdqLlck?si=IH2yUiw-wrscbI5M">
+      <img src="image/youtube_thumbnail.jpg" alt="Video 2">
+      <div class="play-button">▶</div>
+      <p class="video-title">Spicy Turkey</p>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="video-item" data-category="drinks" data-video="https://www.youtube.com/embed/GplN-6TqXoc?si=F9h3jZvaYttmvo7x">
+      <img src="image/youtube_thumbnail6.jpg" alt="Video 3">
+      <div class="play-button">▶</div>
+      <p class="video-title">Coffee Perfection</p>
+    </div>
+
+    <!-- Video 4 -->
+    <div class="video-item" data-category="tutorials" data-video="https://www.youtube.com/embed/MOvq3QFKStE?si=WMbBleXs9JFQCCaV">
+      <img src="image/youtube_thumbnail5.jpg" alt="Video 4">
+      <div class="play-button">▶</div>
+      <p class="video-title">Easy Sandwich Tutorial</p>
+    </div>
+  </section>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="../global.js"></script>
+  <script src="video.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
