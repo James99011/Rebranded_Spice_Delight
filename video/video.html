@@ -11,7 +11,7 @@
  <!--  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-   <header>
+  <header>
     <!-- Navbar section -->
     <nav class="navbar">
      <!-- Left: Toggle Button and Cart Count -->
@@ -24,7 +24,7 @@
 
       <!-- Center: Logo -->
       <div class="nav-center">
-        <a href="index.html"  style="text-decoration: none;"><div class="logo">SpiceDelight</div></a>
+        <a href="../index.html"  style="text-decoration: none;"><div class="logo">SpiceDelight</div></a>
       </div>
 
       <!-- Right: Menu for Laptop view -->
@@ -72,36 +72,52 @@
     <button class="filter-btn" data-filter="drinks">Drinks</button>
   </div>
 
-  <!-- Video Gallery -->
-  <section class="video-gallery">
-    <!-- Video 1 -->
-    <div class="video-item" data-category="recipes" data-video="https://www.youtube.com/embed/Fvj0OCdV0QA?si=lS6QjUj7P20u75a3">
-      <img src="image/youtube_thumbnail3.jpg" alt="Video 1">
-      <div class="play-button">▶</div>
-      <p class="video-title">Italian Dish</p>
-    </div>
+  <section class="video-gallery" id="videoGallery">
 
-    <!-- Video 2 -->
-    <div class="video-item" data-category="recipes" data-video="https://www.youtube.com/embed/TEtEUdqLlck?si=IH2yUiw-wrscbI5M">
-      <img src="image/youtube_thumbnail.jpg" alt="Video 2">
-      <div class="play-button">▶</div>
-      <p class="video-title">Spicy Turkey</p>
-    </div>
+  <!-- Video 1 (Popular) -->
+  <div class="video-item" data-category="recipes" data-video="https://www.youtube.com/embed/Fvj0OCdV0QA?si=lS6QjUj7P20u75a3">
+    <span class="badge-popular">⭐ Popular</span>
+    <img src="image/youtube_thumbnail3.jpg" alt="Video 1">
+    <div class="play-button">▶</div>
+    <p class="video-title">Italian Dish</p>
+    <p class="video-views">1.2k views</p>
+  </div>
 
-    <!-- Video 3 -->
-    <div class="video-item" data-category="drinks" data-video="https://www.youtube.com/embed/GplN-6TqXoc?si=F9h3jZvaYttmvo7x">
-      <img src="image/youtube_thumbnail6.jpg" alt="Video 3">
-      <div class="play-button">▶</div>
-      <p class="video-title">Coffee Perfection</p>
-    </div>
+  <!-- Video 2 -->
+  <div class="video-item" data-category="recipes" data-video="https://www.youtube.com/embed/TEtEUdqLlck?si=IH2yUiw-wrscbI5M">
+    <img src="image/youtube_thumbnail.jpg" alt="Video 2">
+    <div class="play-button">▶</div>
+    <p class="video-title">Spicy Turkey</p>
+    <p class="video-views">1k views</p>
+  </div>
 
-    <!-- Video 4 -->
-    <div class="video-item" data-category="tutorials" data-video="https://www.youtube.com/embed/MOvq3QFKStE?si=WMbBleXs9JFQCCaV">
-      <img src="image/youtube_thumbnail5.jpg" alt="Video 4">
-      <div class="play-button">▶</div>
-      <p class="video-title">Easy Sandwich Tutorial</p>
-    </div>
-  </section>
+  <!-- Video 3 -->
+  <div class="video-item" data-category="drinks" data-video="https://www.youtube.com/embed/GplN-6TqXoc?si=F9h3jZvaYttmvo7x">
+    <span class="badge-popular">⭐ Popular</span>
+    <img src="image/youtube_thumbnail6.jpg" alt="Video 3">
+    <div class="play-button">▶</div>
+    <p class="video-title">Coffee Perfection</p>
+    <p class="video-views">2.5k views</p>
+  </div>
+
+  <!-- Video 4 -->
+  <div class="video-item" data-category="tutorials" data-video="https://www.youtube.com/embed/MOvq3QFKStE?si=WMbBleXs9JFQCCaV">
+    <img src="image/youtube_thumbnail5.jpg" alt="Video 4">
+    <div class="play-button">▶</div>
+    <p class="video-title">Easy Sandwich Tutorial</p>
+    <p class="video-views">1.3k views</p>
+  </div>
+
+  <!-- More items will be appended via Load More button -->
+
+</section>
+
+<button id="loadMoreBtn" class="load-more">Load More</button>
+
+<!-- Floating Subscribe Button -->
+<a href="https://youtube.com/@jegedejames?si=CTlX80e1UOEcUJD8" class="subscribe-btn" target="_blank">
+  🔴 Subscribe on YouTube
+</a>
 
   <!-- Video Modal -->
   <div id="videoModal" class="modal">
@@ -110,6 +126,73 @@
       <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
   </div>
+
+
+
+
+
+    <!-- ✅ FOOTER SECTION -->
+  <footer class="footer" id="footer">
+    <!-- Falling Rain Animation Layer -->
+    <div class="rain"></div>
+
+    <div class="footer-container">
+      <!-- Logo + About -->
+      <div class="footer-col">
+        <h2 class="footer-logo">SpiceDelight</h2>
+        <p class="footer-about">
+          Bringing you tasty meals and refreshing drinks with love, crafted by our chefs.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../shop/shop.html">Shop</a></li>
+          <li><a href="video.html">Videos</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+
+        <a href="mailto:jaytech99011@gmail.com" class="contact-link">
+          <p><i class="fas fa-envelope"></i> jaytech99011@gmail.com</p>
+        </a>
+
+        <a href="tel:+2349076956478" class="contact-link">
+          <p><i class="fas fa-phone"></i> +234 907 695 6478</p>
+        </a>
+
+        <a href="https://www.google.com/maps?q=123+Flavor+Street,+Lagos,+Nigeria" 
+          target="_blank" class="contact-link">
+          <p><i class="fas fa-location-dot"></i> 123 Flavor Street, Lagos, Nigeria</p>
+        </a>
+      </div>
+
+      <!-- Socials -->
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="socials">
+          <a href="https://www.facebook.com/share/16rsK7iNHA/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/jaytechwebsolutions?igsh=MWw2dGFybTJkYmx6cQ=="><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/2349076956478"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://youtube.com/@jegedejames?si=kKVHFk4WWXPYfDnZ"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p>© 2025 Spice Delight. All Rights Reserved.</p>
+    </div>
+  </footer>
 
 
 

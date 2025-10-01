@@ -60,3 +60,49 @@ document.addEventListener('touchend', function(event) {
   lastTouch = now;
 }, { passive: false });
 
+
+
+
+
+    // Assuming 'updateHeaderCartCount' is the function that reads localStorage and updates the header count.
+    // This is the function that should be available from your global.js.
+    if (typeof updateHeaderCartCount === 'function') {
+        updateHeaderCartCount();
+    } else {
+        // Fallback code if the function is not defined globally (less likely, but a good check)
+        const headerCartCount = document.getElementById("cartCount");
+        if (headerCartCount) {
+            const savedCart = localStorage.getItem('cart');
+            const cart = savedCart ? JSON.parse(savedCart) : [];
+            const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+            headerCartCount.textContent = `(${itemCount})`;
+        }
+    }
+
+
+
+
+
+let visibleVideos = 4; // Show first 4 initially
+const loadMoreBtn = document.getElementById("loadMoreBtn");
+const videoItemss = document.querySelectorAll(".video-item");
+
+loadMoreBtn.addEventListener("click", () => {
+  visibleVideos += 4;
+  videoItemss.forEach((item, index) => {
+    if (index < visibleVideos) {
+      item.style.display = "block";
+    }
+  });
+
+  if (visibleVideos >= videoItemss.length) {
+    loadMoreBtn.style.display = "none";
+  }
+});
+
+// Initially hide videos beyond 4
+videoItemss.forEach((item, index) => {
+  if (index >= 4) item.style.display = "none";
+});
+
+
