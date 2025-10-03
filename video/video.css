@@ -507,7 +507,7 @@ body {
 /* Floating Subscribe Button */
 .subscribe-btn {
   position: fixed;
-  bottom: 20px;
+  bottom: 40px;
   right: 20px;
   background: white;
   color: red;

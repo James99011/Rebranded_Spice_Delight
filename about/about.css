@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Hero Section */
+.about-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content:space-between;
+  padding: 3rem 5%;
+  background: #fff7e6;
+}
+
+@media (max-width: 547px) {
+  .about-hero {
+    display: inline-block;
+    
+  }
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #e85d04;
+}
+
+.hero-text p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #e85d04;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  border-radius: 150px;
+}
+
+
+@media (max-width: 547px) {
+  .hero-image img {
+    object-fit: contain;
+    margin-top: 50px;
+    border-radius: 100%;
+  }
+}
+
+
+/* Highlights */
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 3rem 5%;
+}
+
+.highlight {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.highlight h3 {
+  color: #d9480f;
+}
+
+/* CTA Section */
+.about-cta {
+  text-align: center;
+  padding: 3rem 0;
+  background: #e85d04;
+  color: white;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: white;
+  color: #e85d04;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+}
