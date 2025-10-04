@@ -64,12 +64,6 @@ html, body {
   z-index: 1000;
 }
 
-
-.nav-right, .desktop-menu:hover {
-  color: #FFD700;
-}
-
-
 .nav-left,
 .nav-right {
   display: none;
@@ -152,7 +146,18 @@ html, body {
   text-decoration: none;
   color: #004080;
   font-weight: bold;
+  font-size: 17px;
+  transition: color 0.3s ease;
 }
+
+
+.desktop-menu li a:hover {
+  color: #FFD700;
+ 
+}
+
+
+
 
 /* MOBILE MENU DROPDOWN */
 .mobile-menu {
@@ -178,7 +183,7 @@ html, body {
 
 .mobile-menu a {
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   color: #004080;
   font-weight: bold;
 }
@@ -195,6 +200,7 @@ html, body {
 
   .desktop-menu {
     display: block;
+
   }
 }
 
@@ -446,7 +452,7 @@ body {
   right: 15px;
   font-size: 2rem;
   cursor: pointer;
-  color: black;
+  color: #fff;
 }
 
 /* Filter Buttons */
@@ -706,14 +712,24 @@ body {
 }
 
 
+.back-btn {
+  position: fixed;   /* stays in place on all screens */
+  top: 103px;         /* adjust if your header is taller/shorter */
+  left: 15px;        /* small spacing from the edge */
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: center;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 9999;     /* stays on top of everything */
+}
 
-
-
-
-
-
-
-
-
-
-
+/* Optional hover effect */
+.back-btn:hover {
+  background: #f1f1f1;
+}
