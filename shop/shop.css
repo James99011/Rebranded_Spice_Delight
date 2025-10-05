@@ -149,7 +149,17 @@ html, body {
   text-decoration: none;
   color: #004080;
   font-weight: bold;
+  transition:color 1s ease, 0.3s ease-in-out;
+  animation: fadeIn 3s ease-in-out;
 }
+
+.desktop-menu li a:hover {
+  color: #FFD700;
+ 
+}
+
+
+
 
 /* MOBILE MENU DROPDOWN */
 .mobile-menu {
@@ -178,6 +188,13 @@ html, body {
   font-size: 18px;
   color: #004080;
   font-weight: bold;
+  transition:color 1s ease, 0.3s ease-in-out;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.mobile-menu li a:hover {
+  color: #FFD700;
+ 
 }
 
 /* RESPONSIVE */
@@ -574,6 +591,13 @@ html, body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   cursor: pointer;
   z-index: 9999;     /* stays on top of everything */
+}
+
+@media (max-width: 767px) {
+  .back-btn {
+    left: 2px;
+    top: 130px;
+  }
 }
 
 /* Optional hover effect */

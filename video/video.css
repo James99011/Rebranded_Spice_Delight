@@ -147,14 +147,15 @@ html, body {
   color: #004080;
   font-weight: bold;
   font-size: 17px;
-  transition: color 0.3s ease;
+  transition:color 1s ease, 0.3s ease-in-out;
+  animation: fadeIn 3s ease-in-out;
 }
-
 
 .desktop-menu li a:hover {
   color: #FFD700;
  
 }
+
 
 
 
@@ -186,6 +187,14 @@ html, body {
   font-size: 20px;
   color: #004080;
   font-weight: bold;
+  transition:color 1s ease, 0.3s ease-in-out;
+  animation: fadeIn 3s ease-in-out;
+}
+
+
+.mobile-menu li a:hover {
+  color: #FFD700;
+ 
 }
 
 /* RESPONSIVE */

@@ -12,15 +12,66 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <header>
+    <!-- Navbar section -->
+    <nav class="navbar">
+     <!-- Left: Toggle Button and Cart Count -->
+      <div class="nav-left">
+        <button id="navToggle" class="toggle-btn">
+          <span id="toggleSymbol">+</span>
+        </button>
+        <a href="../shop/shop.html?showCart=true" style="text-decoration: none;"><span id="cartCount">(0)</span></a>
+      </div>
+
+      <!-- Center: Logo -->
+      <div class="nav-center">
+        <a href="../index.html"  style="text-decoration: none;"><div class="logo">SpiceDelight</div></a>
+      </div>
+
+      <!-- Right: Menu for Laptop view -->
+      <div class="nav-right desktop-menu">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../shop/shop.html">Shop</a></li>
+          <li><a href="../video/video.html">Videos</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="../shop/shop.html?showCart=true">Cart 🛒</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <!-- Mobile dropdown menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../shop/shop.html">Shop</a></li>
+        <li><a href="../video/video.html">Videos</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="../shop/shop.html?showCart=true">Cart 🛒</a></li>
+      </ul>
+    </div>
+  </header>
+   
+  
+
+
+
+
+
+
+
   <!-- Hero Section -->
   <section class="about-hero">
     <div class="hero-text">
       <h1>We Don't Just Cook — We Awaken Taste Buds.</h1>
       <p>SpiceDelight transforms ordinary meals into bold celebrations of flavor. No shortcuts, no bland bites — just real taste crafted with passion.</p>
-      <a href="shop/shop.html" class="hero-btn">Explore Flavors</a>
+      <a href="../video/video.html" class="hero-btn">Explore Flavors</a>
     </div>
     <div class="hero-image">
-      <img src="../images/about-image2.png" alt="Spices and Food">
+      <img src="image/about-image.png" alt="Spices and Food">
     </div>
   </section>
 
@@ -43,14 +94,74 @@
   <!-- Call to Action -->
   <section class="about-cta">
     <h2>Ready to Taste the Difference?</h2>
-    <a href="shop/shop.html" class="cta-btn">Shop Now</a>
+    <a href="../shop/shop.html" class="cta-btn">Shop Now</a>
   </section>
 
  
 
-<!-- <script src="global.js"></script> -->
-</body>
-</html>
+  
+    <!-- ✅ FOOTER SECTION -->
+  <footer class="footer" id="footer">
+    <!-- Falling Rain Animation Layer -->
+    <div class="rain"></div>
+
+    <div class="footer-container">
+      <!-- Logo + About -->
+      <div class="footer-col">
+        <h2 class="footer-logo">SpiceDelight</h2>
+        <p class="footer-about">
+          Bringing you tasty meals and refreshing drinks with love, crafted by our chefs.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../shop/shop.html">Shop</a></li>
+          <li><a href="../video/video.html">Videos</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+
+        <a href="mailto:jaytech99011@gmail.com" class="contact-link">
+          <p><i class="fas fa-envelope"></i> jaytech99011@gmail.com</p>
+        </a>
+
+        <a href="tel:+2349076956478" class="contact-link">
+          <p><i class="fas fa-phone"></i> +234 907 695 6478</p>
+        </a>
+
+        <a href="https://www.google.com/maps?q=123+Flavor+Street,+Lagos,+Nigeria" 
+          target="_blank" class="contact-link">
+          <p><i class="fas fa-location-dot"></i> 123 Flavor Street, Lagos, Nigeria</p>
+        </a>
+      </div>
+
+      <!-- Socials -->
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="socials">
+          <a href="https://www.facebook.com/share/16rsK7iNHA/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/jaytechwebsolutions?igsh=MWw2dGFybTJkYmx6cQ=="><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/2349076956478"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://youtube.com/@jegedejames?si=kKVHFk4WWXPYfDnZ"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p>© 2025 Spice Delight. All Rights Reserved.</p>
+    </div>
+  </footer>
 
 
 
@@ -60,16 +171,10 @@
 
 
 
+  <button class="back-btn" onclick="history.back()">←</button>
+  <a href="javascript:history.back()"></a>
 
-
-
-
-
-
-
-
-
-
-
+  <script src="../global.js"></script>
+  <script src="about.js"></script>
 </body>
 </html>

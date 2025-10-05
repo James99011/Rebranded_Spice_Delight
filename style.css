@@ -242,6 +242,14 @@ html, body {
   text-decoration: none;
   color: #004080;
   font-weight: bold;
+  transition:color 1s ease, 0.3s ease-in-out;
+  animation: fadeIn 3s ease-in-out;
+}
+
+
+.desktop-menu li a:hover {
+  color: #FFD700;
+ 
 }
 
 /* MOBILE MENU DROPDOWN */
@@ -271,7 +279,15 @@ html, body {
   font-size: 18px;
   color: #004080;
   font-weight: bold;
+  transition:color 1s ease, 0.3s ease-in-out;
+  animation: fadeIn 3s ease-in-out;
 }
+
+.mobile-menu li a:hover {
+  color: #FFD700;
+ 
+}
+
 
 /* RESPONSIVE */
 @media (min-width: 768px) {
