@@ -139,6 +139,7 @@ html, body {
   display: flex;
   gap: 20px;
   list-style: none;
+  align-items: center;
 }
 
 .desktop-menu li a {
@@ -230,6 +231,11 @@ html, body {
 
   .nav-left, .nav-center {
     flex: 1;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
   }
 
   .navbar {

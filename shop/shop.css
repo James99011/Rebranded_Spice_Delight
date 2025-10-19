@@ -230,6 +230,12 @@ html, body {
     flex: 1;
   }
 
+  
+  .nav-left {
+    display: flex;
+    align-items: center;
+  }
+
   .navbar {
     display: flex;
     justify-content: space-between;
