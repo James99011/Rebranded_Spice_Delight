@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>About - SpiceDelight</title>
-  <link rel="stylesheet" href="about.css">
+  <title>SpiceDelight</title>
+  <link rel="stylesheet" href="contact.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
 </head>
 <body>
   <header>
@@ -34,8 +34,8 @@
           <li><a href="../index.html">Home</a></li>
           <li><a href="../shop/shop.html">Shop</a></li>
           <li><a href="../video/video.html">Videos</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="../contact/contact.html">Contact</a></li>
+          <li><a href="../about/about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li><a href="../shop/shop.html?showCart=true">Cart 🛒</a></li>
         </ul>
       </div>
@@ -48,14 +48,13 @@
         <li><a href="../index.html">Home</a></li>
         <li><a href="../shop/shop.html">Shop</a></li>
         <li><a href="../video/video.html">Videos</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="../contact/contact.html">Contact</a></li>
+        <li><a href="../about/about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="../shop/shop.html?showCart=true">Cart 🛒</a></li>
       </ul>
     </div>
   </header>
    
-  
 
 
 
@@ -63,44 +62,77 @@
 
 
 
-  <!-- Hero Section -->
-  <section class="about-hero">
-    <div class="hero-text">
-      <h1>We Don't Just Cook — We Awaken Taste Buds.</h1>
-      <p>SpiceDelight transforms ordinary meals into bold celebrations of flavor. No shortcuts, no bland bites — just real taste crafted with passion.</p>
-      <a href="../video/video.html" class="hero-btn">Explore Flavors</a>
+
+
+
+
+
+
+
+<!-- contact.html -->
+<section id="contact-section">
+  <div class="contact-outer">
+    <div class="contact-card">
+      <h2>Contact Spice Delight</h2>
+      <p class="lead">Have a question, order request, or feedback? Fill this form and we'll reply shortly.</p>
+
+      <form id="contact-form" class="contact-form" autocomplete="on">
+        <div>
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" required placeholder="Your full name" />
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+        </div>
+
+        <div class="full">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected>Choose a subject</option>
+            <option>General Inquiry</option>
+            <option>Order / Booking</option>
+            <option>Feedback</option>
+            <option>Complaint</option>
+            <option>Partnership</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="phone">Phone (optional)</label>
+          <input id="phone" name="phone" type="tel" placeholder="+234 800 000 0000" />
+        </div>
+
+        <div></div>
+
+        <div class="full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+        </div>
+
+        <div class="full actions">
+          <button type="submit" class="btn btn-primary" id="send-btn">Send Message</button>
+          <button type="reset" class="btn btn-muted" id="reset-btn">Reset</button>
+        </div>
+      </form>
     </div>
-    <div class="hero-image">
-      <img src="image/about-image.png" alt="Spices and Food">
-    </div>
-  </section>
+  </div>
 
-  <!-- Mission Highlights -->
-  <section class="about-highlights">
-    <div class="highlight">
-      <h3>🔥 100% Authentic Ingredients</h3>
-      <p>Every blend is sourced from trusted farms and crafted with precision.</p>
+  <div id="modal-backdrop" class="modal-backdrop">
+    <div class="modal" id="modal">
+      <h3 id="modal-title">Status</h3>
+      <p id="modal-message">...</p>
+      <button class="close" id="modal-close">Close</button>
     </div>
-    <div class="highlight">
-      <h3>🌍 Inspired by Global Flavors</h3>
-      <p>From Italian zest to Nigerian heat — we pull inspiration from everywhere.</p>
-    </div>
-    <div class="highlight">
-      <h3>💛 Crafted for Real Food Lovers</h3>
-      <p>Not just seasoning — it’s an experience.</p>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Call to Action -->
-  <section class="about-cta">
-    <h2>Ready to Taste the Difference?</h2>
-    <a href="../shop/shop.html" class="cta-btn">Shop Now</a>
-  </section>
 
- 
 
-  
-    <!-- ✅ FOOTER SECTION -->
+
+
+  <!-- ✅ FOOTER SECTION -->
   <footer class="footer" id="footer">
     <!-- Falling Rain Animation Layer -->
     <div class="rain"></div>
@@ -121,8 +153,8 @@
           <li><a href="../index.html">Home</a></li>
           <li><a href="../shop/shop.html">Shop</a></li>
           <li><a href="../video/video.html">Videos</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="../contact/contact.html">Contact</a></li>
+          <li><a href="../about/about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li><a href="#blogs">Blogs</a></li>
         </ul>
       </div>
@@ -164,9 +196,7 @@
   </footer>
 
 
-
-
-
+  
 <script>
   window.addEventListener("scroll", function() {
     const header = document.querySelector("header");
@@ -181,10 +211,26 @@
 
 
 
-  <button class="back-btn" onclick="history.back()">←</button>
-  <a href="javascript:history.back()"></a>
 
-  <script src="../global.js"></script>
-  <script src="about.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- EMAILJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+
+
+<button class="back-btn" onclick="history.back()">←</button>
+<a href="javascript:history.back()"></a>
+<script src="../global.js"></script>
+<script src="contact.js"></script>
 </body>
 </html>
