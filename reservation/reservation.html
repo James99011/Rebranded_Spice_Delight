@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Book a Table | Spice Delight</title>
+  <link rel="stylesheet" href="reservation.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+   <header>
+    <!-- Navbar section -->
+    <nav class="navbar">
+     <!-- Left: Toggle Button and Cart Count -->
+      <div class="nav-left">
+        <button id="navToggle" class="toggle-btn">
+          <span id="toggleSymbol">+</span>
+        </button>
+        <a href="../shop/shop.html?showCart=true" style="text-decoration: none;"><span id="cartCount">(0)</span></a>
+      </div>
+
+      <!-- Center: Logo -->
+      <div class="nav-center">
+        <a href="../index.html"  style="text-decoration: none;"><div class="logo">SpiceDelight</div></a>
+      </div>
+
+      <!-- Right: Menu for Laptop view -->
+      <div class="nav-right desktop-menu">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../shop/shop.html">Shop</a></li>
+          <li><a href="../video/video.html">Videos</a></li>
+          <li><a href="../about/about.html">About</a></li>
+          <li><a href="../contact/contact.html">Contact</a></li>
+          <li><a href="../shop/shop.html?showCart=true">Cart 🛒</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <!-- Mobile dropdown menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../shop/shop.html">Shop</a></li>
+        <li><a href="../video/video.html">Videos</a></li>
+        <li><a href="../about/about.html">About</a></li>
+        <li><a href="../contact/contact.html">Contact</a></li>
+        <li><a href="../shop/shop.html?showCart=true">Cart 🛒</a></li>
+      </ul>
+    </div>
+  </header>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="overlay">
+      <div class="hero-content">
+        <h1>Book Your Table</h1>
+        <p>Reserve your seat for an unforgettable dining experience.</p>
+        <button id="scrollToForm">Reserve Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO SECTION -->
+  <section class="info-section">
+    <div class="info-content">
+      <div class="info-text">
+        <h2>Experience the Taste of Perfection</h2>
+        <p>At Spice Delight, we serve passion on a plate — with cozy ambience,
+           warm service, and mouthwatering dishes crafted from the finest ingredients.
+           Whether it’s a family dinner or a romantic evening, your comfort is our priority.</p>
+        <p><strong>Opening Hours:</strong> Mon – Sun, 10:00 AM – 10:00 PM</p>
+        <p><strong>Location:</strong> 40 Unity Avenue Street, Ijegun/Ikotun, Lagos</p>
+      </div>
+      <div class="info-image">
+        <img src="../about/image/reservation-image.jpg" alt="Restaurant Dining">
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVATION FORM SECTION -->
+  <section id="reservation-form-section">
+    <h2>Make a Reservation</h2>
+    <form id="reservationForm">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+      </div>
+
+      <div class="form-group">
+        <label for="guests">Number of Guests</label>
+        <select id="guests" name="guests" required>
+          <option value="">Select guests</option>
+          <option value="1">1 Guest</option>
+          <option value="2">2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+          <option value="5+">5+ Guests</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Reservation Date</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="time">Reservation Time</label>
+        <input type="time" id="time" name="time" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Special Requests</label>
+        <textarea id="message" name="message" placeholder="Any special requests?"></textarea>
+      </div>
+
+      <button type="submit" id="submitBtn">Book Now</button>
+    </form>
+
+    <div id="popup" class="popup"></div>
+  </section>
+
+  <!-- CTA FOOTER -->
+  <footer class="urgent-contact">
+    <p>We can’t wait to welcome you! For urgent reservations, call <strong>+234 913 194 8528</strong>.</p>
+  </footer>
+
+
+
+  <!-- ✅ FOOTER SECTION -->
+  <footer class="footer" id="footer">
+    <!-- Falling Rain Animation Layer -->
+    <div class="rain"></div>
+
+    <div class="footer-container">
+      <!-- Logo + About -->
+      <div class="footer-col">
+        <h2 class="footer-logo">SpiceDelight</h2>
+        <p class="footer-about">
+          Bringing you tasty meals and refreshing drinks with love, crafted by our chefs.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../shop/shop.html">Shop</a></li>
+          <li><a href="../video/video.html">Videos</a></li>
+          <li><a href="../about/about.html">About</a></li>
+          <li><a href="../contact/contact.html">Contact</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+
+        <a href="mailto:jaytech99011@gmail.com" class="contact-link">
+          <p><i class="fas fa-envelope"></i> jaytech99011@gmail.com</p>
+        </a>
+
+        <a href="tel:+2349076956478" class="contact-link">
+          <p><i class="fas fa-phone"></i> +234 907 695 6478</p>
+        </a>
+
+        <a href="https://www.google.com/maps?q=123+Flavor+Street,+Lagos,+Nigeria" 
+          target="_blank" class="contact-link">
+          <p><i class="fas fa-location-dot"></i> 123 Flavor Street, Lagos, Nigeria</p>
+        </a>
+      </div>
+
+      <!-- Socials -->
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="socials">
+          <a href="https://www.facebook.com/share/16rsK7iNHA/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/jaytechwebsolutions?igsh=MWw2dGFybTJkYmx6cQ=="><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/2349076956478"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://youtube.com/@jegedejames?si=kKVHFk4WWXPYfDnZ"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p>© 2025 Spice Delight. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+  <script>
+  window.addEventListener("scroll", function() {
+    const header = document.querySelector("header");
+    if (window.scrollY > 50) {
+      header.classList.add("shrink");
+    } else {
+      header.classList.remove("shrink");
+    }
+  });
+</script>
+
+
+
+  <button class="back-btn" onclick="history.back()">←</button>
+  <a href="javascript:history.back()"></a>
+  <script src="../global.js"></script>
+  <script src="reservation.js"></script>
+</body>
+</html>
