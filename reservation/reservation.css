@@ -456,6 +456,10 @@ button#submitBtn:hover {
   font-size: 0.95rem;
 }
 
+strong {
+  text-decoration: none;
+}
+
 /* RESPONSIVENESS */
 @media (max-width: 768px) {
   .hero-content h1 {
