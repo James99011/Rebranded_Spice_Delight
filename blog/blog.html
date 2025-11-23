@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Spice Delight | Blog</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="blog.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <!-- Navbar section -->
+    <nav class="navbar">
+     <!-- Left: Toggle Button and Cart Count -->
+      <div class="nav-left">
+        <button id="navToggle" class="toggle-btn">
+          <span id="toggleSymbol">+</span>
+        </button>
+        <a href="../shop/shop.html?showCart=true" style="text-decoration: none;"><span id="cartCount">(0)</span></a>
+      </div>
+
+      <!-- Center: Logo -->
+      <div class="nav-center">
+        <a href="../index.html"  style="text-decoration: none;"><div class="logo">SpiceDelight</div></a>
+      </div>
+
+      <!-- Right: Menu for Laptop view -->
+      <div class="nav-right desktop-menu">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../shop/shop.html">Shop</a></li>
+          <li><a href="../video/video.html">Videos</a></li>
+          <li><a href="../about/about.html">About</a></li>
+          <li><a href="../contact/contact.html">Contact</a></li>
+          <li><a href="../shop/shop.html?showCart=true">Cart 🛒</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <!-- Mobile dropdown menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../shop/shop.html">Shop</a></li>
+        <li><a href="../video/video.html">Videos</a></li>
+        <li><a href="../about/about.html">About</a></li>
+        <li><a href="../contact/contact.html">Contact</a></li>
+        <li><a href="../shop/shop.html?showCart=true">Cart 🛒</a></li>
+      </ul>
+    </div>
+  </header>
+   
+
+  <!-- BLOG HERO SECTION -->
+  <section class="blog-hero">
+    <div class="hero-content">
+      <h1>Our Culinary Stories</h1>
+      <p>Explore delicious recipes, kitchen secrets, and healthy eating tips from our chefs.</p>
+    </div>
+  </section>
+
+  <!-- BLOG POSTS SECTION -->
+  <section class="blog-posts">
+    <div class="container">
+      <div class="post">
+        <img src="../images/spice-flavour.png" alt="Spices and Flavor" />
+        <div class="post-content">
+          <h2>The Art of Balancing Spices</h2>
+          <p>Discover how to combine spices to create unforgettable flavors in every dish...</p>
+          <button class="read-more" data-post="1">Read More</button>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="../images/Healthy-Meal.jpg" alt="Healthy Meal" />
+        <div class="post-content">
+          <h2>5 Healthy Meals You Can Cook in 20 Minutes</h2>
+          <p>Quick, nutritious, and tasty! Perfect for busy food lovers who want quality and health...</p>
+          <button class="read-more" data-post="2">Read More</button>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="../images/chef-tips-image.jpg" alt="Chef Tips" />
+        <div class="post-content">
+          <h2>Chef’s Secret: How to Keep Meals Fresh</h2>
+          <p>Learn the secrets of meal prepping, freshness, and storage used by professionals...</p>
+          <button class="read-more" data-post="3">Read More</button>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="../images/Hygiene.png" alt="Restaurant Hygiene">
+        <div class="post-content">
+          <h3>Why Restaurant Hygiene Matters More Than Ever</h3>
+          <p>Maintaining excellent hygiene is no longer optional — it is the foundation of customer trust and food safety…</p>
+          <button class="read-more" data-modal="modal4">Read More</button>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="../images/Booking-tip.png" alt="Booking Tips">
+        <div class="post-content">
+          <h3>Top 5 Mistakes People Make When Booking a Table</h3>
+          <p>Before making your next reservation, avoid these common mistakes customers unknowingly make…</p>
+          <button class="read-more" data-modal="modal5">Read More</button>
+        </div>    
+      </div>
+
+      <div class="post">
+        <img src="../images/Healthy-Eating.png" alt="Healthy Eating">
+        <div class="post-content">
+          <h3>Healthy Eating: Why Fresh Ingredients Make a Difference</h3>
+          <p>The key to a healthier lifestyle begins with fresh vegetables, clean spices, and naturally sourced ingredients…</p>
+          <button class="read-more" data-modal="modal6">Read More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- MODAL 4 -->
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <span class="close" data-close="modal4">&times;</span>
+    <h2>Why Restaurant Hygiene Matters More Than Ever</h2>
+    <p>
+      Restaurant hygiene is one of the most important elements customers consider before choosing 
+      where to dine. Cleanliness influences how the food tastes, how customers feel, and whether 
+      they return.
+    </p>
+    <p>
+      Professional hygiene standards include proper food storage, clean workspaces, hand-washing 
+      routines, and sanitized equipment. A clean environment prevents food-borne illnesses, keeps 
+      your chefs healthy, and boosts customer confidence.
+    </p>
+    <p>
+      At Spice Delight, we prioritize safe food handling, temperature control, and spotless tools. 
+      A clean restaurant is not just good for health — it's good for business.
+    </p>
+  </div>
+</div>
+
+<!-- MODAL 5 -->
+<div id="modal5" class="modal">
+  <div class="modal-content">
+    <span class="close" data-close="modal5">&times;</span>
+    <h2>Top 5 Mistakes People Make When Booking a Table</h2>
+    <p>Booking a table seems simple, but many customers make mistakes that affect their dining experience:</p>
+    <ul>
+      <li>Booking too late — popular restaurants fill quickly.</li>
+      <li>Not stating dietary needs early.</li>
+      <li>Ignoring confirmation messages.</li>
+      <li>Arriving extremely early or late.</li>
+      <li>Not updating the restaurant when group size changes.</li>
+    </ul>
+    <p>Avoiding these helps us serve you better and ensures a smooth experience.</p>
+  </div>
+</div>
+
+<!-- MODAL 6 -->
+<div id="modal6" class="modal">
+  <div class="modal-content">
+    <span class="close" data-close="modal6">&times;</span>
+    <h2>Healthy Eating: Why Fresh Ingredients Make a Difference</h2>
+    <p>
+      Fresh ingredients enhance taste, boost immunity, and improve digestion. Studies show 
+      freshly prepared meals contain more nutrients and fewer preservatives.
+    </p>
+    <p>
+      At Spice Delight, we source vegetables, spices, and proteins daily to ensure maximum 
+      flavor and nutrition. Using fresh items also supports local farmers and promotes 
+      sustainable food practices.
+    </p>
+    <p>
+      Healthy eating is not a trend — it's a lifestyle built on freshness and quality.
+    </p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  <!-- MODAL (for full post reading) -->
+  <div id="blog-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-body"></p>
+    </div>
+  </div>
+
+  
+   <!-- ✅ FOOTER SECTION -->
+  <footer class="footer" id="footer">
+    <!-- Falling Rain Animation Layer -->
+    <div class="rain"></div>
+
+    <div class="footer-container">
+      <!-- Logo + About -->
+      <div class="footer-col">
+        <h2 class="footer-logo">SpiceDelight</h2>
+        <p class="footer-about">
+          Bringing you tasty meals and refreshing drinks with love, crafted by our chefs.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../shop/shop.html">Shop</a></li>
+          <li><a href="../video/video.html">Videos</a></li>
+          <li><a href="../about/about.html">About</a></li>
+          <li><a href="../contact/contact.html">Contact</a></li>
+          <li><a href="blog.html">Blogs</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+
+        <a href="mailto:jaytech99011@gmail.com" class="contact-link">
+          <p><i class="fas fa-envelope"></i> jaytech99011@gmail.com</p>
+        </a>
+
+        <a href="tel:+2349076956478" class="contact-link">
+          <p><i class="fas fa-phone"></i> +234 907 695 6478</p>
+        </a>
+
+        <a href="https://www.google.com/maps?q=123+Flavor+Street,+Lagos,+Nigeria" 
+          target="_blank" class="contact-link">
+          <p><i class="fas fa-location-dot"></i> 123 Flavor Street, Lagos, Nigeria</p>
+        </a>
+      </div>
+
+      <!-- Socials -->
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="socials">
+          <a href="https://www.facebook.com/share/16rsK7iNHA/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/jaytechwebsolutions?igsh=MWw2dGFybTJkYmx6cQ=="><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/2349076956478"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://youtube.com/@jegedejames?si=kKVHFk4WWXPYfDnZ"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p>© 2025 Spice Delight. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+<script>
+  window.addEventListener("scroll", function() {
+    const header = document.querySelector("header");
+    if (window.scrollY > 50) {
+      header.classList.add("shrink");
+    } else {
+      header.classList.remove("shrink");
+    }
+  });
+</script>
+
+
+
+  <button class="back-btn" onclick="history.back()">←</button>
+
+  <a href="javascript:history.back()"></a>
+  <script src="../global.js"></script>
+  <script src="blog.js"></script>
+</body>
+</html>
