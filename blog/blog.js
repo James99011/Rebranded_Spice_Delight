@@ -142,20 +142,125 @@ document.addEventListener('keydown', function(e) {
 
 
 
+// Robust blog search (auto-detects your cards and inserts search if missing)
+// Paste at end of blog.js or inside a script tag before </body>
 
-const blogSearchInput = document.getElementById("blogSearchInput");
+document.addEventListener('DOMContentLoaded', () => {
+  // Find or create search input inside hero
+  let searchInput = document.getElementById('blogSearchInput');
+  const hero = document.querySelector('.blog-hero');
 
-blogSearchInput.addEventListener("keyup", function () {
-  let filter = blogSearchInput.value.toLowerCase();
-  let blogs = document.querySelectorAll(".blog-card");
+  if (!searchInput) {
+    // create container + input (won't duplicate if user already added)
+    const wrapper = document.createElement('div');
+    wrapper.className = 'blog-search-container';
+    wrapper.innerHTML = `
+      <input type="text" id="blogSearchInput" placeholder="Search blog posts..." aria-label="Search blog posts">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+    `;
+    // put it under hero content (if hero exists) otherwise at top of body
+    if (hero) hero.querySelector('.hero-content')?.appendChild(wrapper);
+    else document.body.insertBefore(wrapper, document.body.firstChild);
+    searchInput = document.getElementById('blogSearchInput');
+  }
 
-  blogs.forEach(card => {
-    let title = card.querySelector(".blog-title").textContent.toLowerCase();
+  // Find posts container elements. Support both .post and .blog-card naming.
+  const posts = Array.from(document.querySelectorAll('.post, .blog-card'));
+  // create "no results" element
+  let noResults = document.getElementById('blog-no-results');
+  if (!noResults) {
+    noResults = document.createElement('div');
+    noResults.id = 'blog-no-results';
+    noResults.style.display = 'none';
+    noResults.style.textAlign = 'center';
+    noResults.style.marginTop = '18px';
+    noResults.style.color = '#fff';
+    noResults.style.fontWeight = '600';
+    // insert after the posts grid if possible
+    const postsSection = document.querySelector('.blog-posts .container') || document.querySelector('.container') || document.querySelector('.blog-posts');
+    if (postsSection) postsSection.parentNode.insertBefore(noResults, postsSection.nextSibling);
+    else document.body.appendChild(noResults);
+  }
 
-    if (title.includes(filter)) {
-      card.style.display = "block";
+  // Build searchable index for each post
+  const index = posts.map(post => {
+    // title: look for h2 or h3 or element with .blog-title
+    const titleEl = post.querySelector('h2, h3, .blog-title');
+    const title = titleEl ? titleEl.textContent.trim() : '';
+
+    // excerpt: first paragraph or .post-content p
+    const excerptEl = post.querySelector('p') || post.querySelector('.post-content p') || post.querySelector('.blog-excerpt');
+    const excerpt = excerptEl ? excerptEl.textContent.trim() : '';
+
+    // image alt
+    const img = post.querySelector('img');
+    const alt = img ? (img.alt || img.getAttribute('data-alt') || '') : '';
+
+    // tags (optional data-tags attribute on the post element, comma separated)
+    const tags = post.dataset.tags || '';
+
+    // full searchable string
+    const searchable = (title + ' ' + excerpt + ' ' + alt + ' ' + tags).toLowerCase();
+
+    return { element: post, title, excerpt, searchable };
+  });
+
+  // Helper: show all posts (reset)
+  function showAll() {
+    index.forEach(i => i.element.style.display = '');
+    noResults.style.display = 'none';
+  }
+
+  // Core filter function
+  function filterPosts(query) {
+    const q = String(query || '').toLowerCase().trim();
+    if (!q) {
+      showAll();
+      return;
+    }
+    let matches = 0;
+    index.forEach(i => {
+      if (i.searchable.includes(q)) {
+        i.element.style.display = '';
+        matches++;
+      } else {
+        i.element.style.display = 'none';
+      }
+    });
+    if (matches === 0) {
+      noResults.textContent = `No posts found for "${query}"`;
+      noResults.style.display = 'block';
     } else {
-      card.style.display = "none";
+      noResults.style.display = 'none';
+    }
+  }
+
+  // Live filtering as the user types, debounce quick typing
+  let debounceTimer;
+  searchInput.addEventListener('input', (e) => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => filterPosts(e.target.value), 150);
+  });
+
+  // Enter key behaviour: focus/scroll to first match and open it (if modal bound)
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const firstMatch = index.find(i => i.element.style.display !== 'none');
+      if (firstMatch) {
+        // scroll into view smoothly and highlight briefly
+        firstMatch.element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        firstMatch.element.style.transition = 'box-shadow 0.3s ease';
+        firstMatch.element.style.boxShadow = '0 6px 24px rgba(0,123,255,0.18)';
+        setTimeout(() => firstMatch.element.style.boxShadow = '', 1200);
+
+        // try to open the post modal if the card has a read-more button linked via data-post or data-modal
+        const btn = firstMatch.element.querySelector('.read-more');
+        if (btn) btn.click();
+      }
     }
   });
+
+  // Optional: expose function for other scripts
+  window.spiceSearchFilter = filterPosts;
 });
