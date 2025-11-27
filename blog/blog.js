@@ -139,3 +139,23 @@ document.addEventListener('keydown', function(e) {
     });
   }
 });
+
+
+
+
+const blogSearchInput = document.getElementById("blogSearchInput");
+
+blogSearchInput.addEventListener("keyup", function () {
+  let filter = blogSearchInput.value.toLowerCase();
+  let blogs = document.querySelectorAll(".blog-card");
+
+  blogs.forEach(card => {
+    let title = card.querySelector(".blog-title").textContent.toLowerCase();
+
+    if (title.includes(filter)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});

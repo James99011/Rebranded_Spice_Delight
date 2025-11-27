@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="blog.css" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
@@ -52,22 +53,28 @@
     </div>
   </header>
    
-
+ 
   <!-- BLOG HERO SECTION -->
   <section class="blog-hero">
+    <div class="blog-search-container">
+      <input type="text" id="blogSearchInput" placeholder="Search blog posts...">
+      <i class="fa fa-search search-icon"></i>
+    </div>
+
     <div class="hero-content">
       <h1>Our Culinary Stories</h1>
       <p>Explore delicious recipes, kitchen secrets, and healthy eating tips from our chefs.</p>
     </div>
+    
   </section>
 
   <!-- BLOG POSTS SECTION -->
   <section class="blog-posts">
     <div class="container">
-      <div class="post">
+      <div class="post" class=".blog-card">
         <img src="../images/spice-flavour.png" alt="Spices and Flavor" />
         <div class="post-content">
-          <h2>The Art of Balancing Spices</h2>
+          <h2 class=".blog-title">The Art of Balancing Spices</h2>
           <p>Discover how to combine spices to create unforgettable flavors in every dish...</p>
           <button class="read-more" data-post="1">Read More</button>
         </div>
@@ -197,6 +204,9 @@
   </div>
 
   
+ 
+
+
    <!-- ✅ FOOTER SECTION -->
   <footer class="footer" id="footer">
     <!-- Falling Rain Animation Layer -->

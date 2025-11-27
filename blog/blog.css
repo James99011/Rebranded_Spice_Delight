@@ -1,8 +1,10 @@
-* {
+  * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+
 
 
 body {
@@ -293,15 +295,11 @@ html, body {
 }
 
 
-
-
-
-
-
-
-
+/* ============================
+   BLOG HERO
+============================ */
 .blog-hero {
-  background: linear-gradient(to right, rgba(0,123,255,0.5), rgba(255,165,0,0.5)), 
+  background: linear-gradient(to right, rgba(0,123,255,0.5), rgba(255,165,0,0.5)),
               url('images/restaurant-bg.jpg') center/cover no-repeat;
   color: white;
   text-align: center;
@@ -321,6 +319,9 @@ html, body {
   animation: fadeInUp 1.2s ease-in;
 }
 
+/* ============================
+   BLOG POSTS GRID
+============================ */
 .blog-posts {
   padding: 60px 20px;
   background-color: #f9fafc;
@@ -328,16 +329,21 @@ html, body {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
 
+/* ============================
+   INDIVIDUAL POST CARD
+============================ */
 .post {
   background: white;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .post:hover {
@@ -348,38 +354,52 @@ html, body {
 .post img {
   width: 100%;
   height: 200px;
-  object-fit: fill;
+  object-fit: cover;
 }
 
+/* Small phone fix */
 @media (max-width: 720px) {
   .post img {
-    object-fit:fill;
+    height: 180px;
+    object-fit: cover;
   }
 }
 
+/* ============================
+   POST CONTENT
+============================ */
 .post-content {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.post-content h2 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  color: #333;
+.post-content h2,
+.post-content h3 {
+  font-size: 1.35rem;
+  margin-bottom: 5px;
+  color: #222;
+  line-height: 1.3;
 }
 
 .post-content p {
-  font-size: 0.95rem;
-  color: #666;
+  font-size: 0.98rem;
+  color: #555;
   margin-bottom: 15px;
+  line-height: 1.5;
 }
 
+/* Read More Button */
 .read-more {
   background: #ff8c00;
   color: white;
   border: none;
   padding: 10px 18px;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 0.95rem;
+  width: fit-content;
   transition: background 0.3s ease;
 }
 
@@ -387,36 +407,177 @@ html, body {
   background: #007bff;
 }
 
-/* Modal styles */
+
+/* =========================================
+   1️⃣ FIX BUTTON ALIGNMENT (Read More)
+========================================= */
+
+/* Make all blog cards same height automatically */
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;   /* Ensures equal spacing */
+}
+
+/* Make content fill space and push button to bottom */
+.post-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Force the read-more button to stay at the bottom */
+.post-content .read-more {
+  margin-top: auto;
+}
+
+/* =========================================
+   2️⃣ FIX IMAGES CUTTING ON MOBILE/TABLET
+========================================= */
+
+/* Default (Laptop & Large Screen) — use cover */
+.post img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: #f2f2f2;
+}
+
+/* Tablet Fix */
+@media (max-width: 900px) {
+  .post img {
+    height: 230px;
+    object-fit: fill;   /* Show full image without cutting */
+    background: white;     /* Clean background */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================
+   MODAL STYLES
+============================ */
 .modal {
   display: none;
   position: fixed;
   z-index: 999;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.75);
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 .modal-content {
   background: white;
   padding: 30px;
   width: 90%;
-  max-width: 600px;
-  border-radius: 8px;
+  max-width: 650px;
+  border-radius: 12px;
   position: relative;
   animation: fadeIn 0.5s ease;
+  line-height: 1.6;
 }
 
+/* VERY IMPORTANT — fix close button */
+.close,
 .close-btn {
   position: absolute;
-  top: 10px;
+  top: 12px;
   right: 15px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
   cursor: pointer;
+  color: #444;
+  z-index: 9999;
+  transition: color 0.2s;
 }
 
+.close:hover,
+.close-btn:hover {
+  color: red;
+}
+
+/* Modal text readability */
+.modal-content h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.modal-content p,
+.modal-content li {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+/* Better list spacing */
+.modal-content ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.modal-content li {
+  margin-bottom: 7px;
+}
+
+/* ============================
+   MOBILE FIXES
+============================ */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 92%;
+    max-width: 400px;
+    padding: 20px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.35rem;
+  }
+
+  .modal-content p,
+  .modal-content li {
+    font-size: 1rem;
+  }
+
+  .close,
+  .close-btn {
+    top: 10px;
+    right: 12px;
+    font-size: 1.6rem;
+  }
+}
+
+/* FORCE MODAL ABOVE NAVBAR */
+.modal {
+  z-index: 99999 !important;
+}
+
+.modal-content {
+  z-index: 100000 !important;
+}
+
+/* Center modal correctly on tablet */
+@media (min-width: 700px) and (max-width: 1100px) {
+  .modal-content {
+    margin-top: 5% !important;
+  }
+}
+
+
+/* ============================
+   ANIMATIONS
+============================ */
 @keyframes fadeInDown {
   from {opacity: 0; transform: translateY(-30px);}
   to {opacity: 1; transform: translateY(0);}
@@ -438,49 +599,49 @@ html, body {
 }
 
 
-/* ===== Mobile Fix for Blog Cards ===== */
 
-
-
-/* ===== Fix Modal on Small Mobile ===== */
-@media (max-width: 480px) {
-  .modal-content {
-    width: 90% !important;
-    max-width: 90%;
-    padding: 20px !important;
-    margin: 40% auto !important;
-  }
-
-  .modal-content h2 {
-    font-size: 1.3rem;
-  }
-
-  .modal-content p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    word-wrap: break-word;
-  }
-
-  .close-modal {
-    font-size: 1.5rem !important;
-    top: 10px;
-    right: 15px;
-  }
+/* ====== BLOG SEARCH BAR ====== */
+.blog-search-container {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  margin: 20px auto 40px auto;
 }
 
+.blog-search-container input {
+  width: 100%;
+  padding: 12px 45px 12px 18px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s ease;
+}
 
-.close {
+.blog-search-container input:focus {
+  border-color: #40a9ff;
+  box-shadow: 0 0 8px rgba(64, 169, 255, 0.4);
+}
+
+.blog-search-container .search-icon {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5rem;
-  cursor: pointer;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  pointer-events: none;
+  opacity: 0.7;
 }
 
-/* ===== Prevent Horizontal Scroll on Mobile ===== */
-body, html {
-  max-width: 100%;
-  overflow-x: hidden !important;
+/* ====== RESPONSIVE ====== */
+@media (max-width: 480px) {
+  .blog-search-container input {
+    font-size: 14px;
+    padding: 10px 40px 10px 15px;
+  }
+  .blog-search-container .search-icon {
+    font-size: 16px;
+  }
 }
 
 
