@@ -56,6 +56,28 @@
   </header>
    
   
+  <!-- search-icon.html -->
+  <!-- Floating circle icon -->
+    <div id="site-search-trigger" aria-label="Open search" title="Search site" role="button" tabindex="0">
+      🔎
+    </div>
+
+    <!-- Overlay (insert anywhere in body; JS will toggle visibility) -->
+    <div id="site-search-overlay" aria-hidden="true">
+      <div class="search-panel" role="dialog" aria-label="Site search">
+        <div class="search-top">
+          <button id="search-close" aria-label="Close search">&times;</button>
+          <input id="siteSearchInput" type="search" placeholder="Search the site — recipes, menu, blog, reservations..." aria-label="Search the site" autocomplete="off">
+        </div>
+
+        <div id="search-results" class="search-results" role="list"></div>
+
+        <div id="search-footer" class="search-footer">
+          <small>Search across pages — press <kbd>Esc</kbd> to close</small>
+        </div>
+      </div>
+    </div>
+
 
 
 
@@ -646,6 +668,7 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="global.js"></script>
 <script src="script.js"></script>
+<script src="search.js"></script>
 </body>
 </html>
 
