@@ -1784,9 +1784,8 @@ html, body {
 /* ===== Search icon (floating) ===== */
 #site-search-trigger {
   position: fixed !important;
-  right: 18px !important;
-  bottom: 86vh !important;
-  left: none !important;
+  right: 20px !important;
+  top: 25px !important;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -1806,9 +1805,11 @@ html, body {
 
 @media (min-width: 769px) {
   #site-search-trigger {
-    bottom: 80vh !important;
+    right: 450px !important;
+    top: 5px !important;
   }
 }
+
 
 /* ===== Full-screen overlay ===== */
 #site-search-overlay {
