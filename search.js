@@ -3,7 +3,8 @@
 // Uses document.getElementById for DOM selections per your style preference.
 
 (function () {
-  const INDEX_PATH = '/search-index.json'; // update if you place it elsewhere
+  const BASE_PATH = '';
+  const INDEX_PATH = 'search-index.json'; // update if you place it elsewhere
   const trigger = document.getElementById('site-search-trigger');
   const overlay = document.getElementById('site-search-overlay');
   const input = document.getElementById('siteSearchInput');
@@ -11,7 +12,6 @@
   const resultsEl = document.getElementById('search-results');
 
   let index = []; // loaded JSON index array [{title, body, tags, url, img}]
-
   // helper: fetch index
   function loadIndex() {
     return fetch(INDEX_PATH, {cache: "no-cache"})
@@ -19,7 +19,9 @@
         if (!res.ok) throw new Error('Search index not found: ' + res.status);
         return res.json();
       })
-      .then(json => { index = json; })
+      .then(json => {
+        index = json.pages || [];
+      })
       .catch(err => {
         console.error('Search index load error', err);
         index = [];
@@ -71,7 +73,7 @@
 
       // snippet - highlight match quickly (simple)
       const snippet = document.createElement('p');
-      snippet.textContent = makeSnippet(item.body || '', q);
+      snippet.textContent = makeSnippet(item.content || '', q);
       meta.appendChild(snippet);
 
       const url = document.createElement('div');
@@ -81,13 +83,14 @@
 
       div.appendChild(meta);
 
-      // click navigates
-      div.addEventListener('click', () => {
-        window.location.href = item.url;
-      });
-      // keyboard Enter
+     div.addEventListener('click', () => {
+       window.location.href = BASE_PATH + item.url;
+     });
+
       div.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') window.location.href = item.url;
+        if (e.key === 'Enter') {
+          window.location.href = BASE_PATH + item.url;
+        }
       });
 
       fragment.appendChild(div);
@@ -113,7 +116,7 @@
     // Map each item to score
     const scored = index.map(item => {
       const title = (item.title||'').toLowerCase();
-      const body = (item.body||'').toLowerCase();
+      const body = (item.content || '').toLowerCase();
       const tags = (item.tags||'').toLowerCase();
       let score = 0;
       if (title.includes(Q)) score += 50;
@@ -135,10 +138,12 @@
   // init: load index then enable triggers
   loadIndex().then(() => {
     // show overlay on icon click / key
+   if (trigger) {
     trigger.addEventListener('click', openSearch);
     trigger.addEventListener('keydown', function(e){
       if (e.key === 'Enter' || e.key === ' ') openSearch();
     });
+   }
     closeBtn.addEventListener('click', closeSearch);
     // click outside to close
     overlay.addEventListener('click', function(e){
@@ -173,4 +178,72 @@
     });
   });
 
+
+  // --- FEATURE 1: Voice Recognition ---
+  const voiceBtn = document.getElementById('voice-search-btn');
+
+  if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = 'en-US';
+
+    voiceBtn.addEventListener('click', () => {
+      recognition.start();
+      voiceBtn.classList.add('listening');
+    });
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      input.value = transcript;
+      voiceBtn.classList.remove('listening');
+      // Trigger the search automatically
+      const results = searchIndex(transcript);
+      renderResults(results, transcript);
+    };
+
+
+    recognition.onstart = () => {
+      console.log("Voice recognition started");
+    };
+
+    recognition.onend = () => {
+      console.log("Voice recognition ended");
+    };
+
+    recognition.onerror = () => voiceBtn.classList.remove('listening');
+    recognition.onend = () => voiceBtn.classList.remove('listening');
+  } else {
+    voiceBtn.style.display = 'none'; // Hide if browser doesn't support it
+  }
+
+  // --- FEATURE 2: Highlighting Matches ---
+  // Replace your existing renderResults logic for the h4 and p tags with this highlight logic:
+  function highlightText(text, q) {
+    if (!q) return text;
+    const regex = new RegExp`((${q}), 'gi')`;
+    return text.replace(regex, '<span class="highlight">$1</span>');
+  }
+
+  // Inside your renderResults item loop:
+  // h4.innerHTML = highlightText(item.title, q);
+  // snippet.innerHTML = highlightText(makeSnippet(item.content || '', q), q);
+
+
+  
+  
+
+
+
+
 })();
+
+
+
+
+
+
+
+

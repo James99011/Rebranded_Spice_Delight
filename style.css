@@ -1945,9 +1945,85 @@ html, body {
 
 
 
+/* Container for the input and mic */
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Position the mic inside the bar */
+/* #voice-search-btn {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+#voice-search-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+} */
+
+/* Animation for when the mic is listening */
+/* #voice-search-btn.listening {
+  color: #ff4b2b;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+} */
+
+/* Highlight search matches in results */
+.highlight {
+  background-color: rgba(255, 215, 0, 0.3); /* Gold tint */
+  font-weight: bold;
+  border-radius: 2px;
+  padding: 0 2px;
+}
 
 
 
+#voice-search-btn {
+  position: absolute;
+  right: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mic-icon {
+  color: #333;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+#voice-search-btn:hover .mic-icon {
+  color: #ff8c00; /* Spice Delight accent */
+  transform: scale(1.1);
+}
+
+#voice-search-btn.listening .mic-icon {
+  color: #e63946;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
 
 
 /* 
