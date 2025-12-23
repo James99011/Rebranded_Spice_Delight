@@ -3,66 +3,79 @@
     {
       "title": "Home - Spice Delight",
       "url": "index.html",
+      "img": "images/spicedelight logo.jpg",
       "content": "Welcome to Spice Delight. Taste the best meals, Delicious African cuisine, Fresh ingredients, Restaurant menu preview, Book a table, Customer service, Explore shop, videos, reservation, contact. Enjoy our signature dishes, food gallery, chef specials, top rated meals."
     },
     {
       "title": "Shop - Spice Delight Store",
       "url": "shop/shop.html",
+      "img": "images/pork-hock-german-with-sauces-dark-background.jpg",
       "content": "Shop delicious meals, order food online, add to cart, view meal categories: Rice, Chicken, Swallow, Soups, Drinks, Snacks. Product descriptions include Jollof Rice, Fried Rice, Grilled Chicken, Shawarma, Smoothies, Burgers, Pasta, Soups, and more. Add to cart button, product details, pricing."
     },
     {
       "title": "Videos - Cooking & Restaurant Videos",
       "url": "video/video.html",
+      "img": "video/image/youtube_thumbnail5.jpg",
       "content": "Watch Spice Delight cooking videos, recipe tutorials, food preparation clips, chef shows, kitchen walkthroughs, customer service presentations. Video gallery for food lovers."
     },
     {
       "title": "About Us - Spice Delight Restaurant",
       "url": "about/about.html",
+      "img": "about/image/about-image.png",
       "content": "About Spice Delight, our mission, restaurant history, chef team, cooking passion, fresh ingredients, healthy meals, customer satisfaction, restaurant vision and values. Learn more about who we are."
     },
     {
       "title": "Contact Us",
       "url": "contact/contact.html",
+      "img": "images/contact-image 2.jpg",
       "content": "Contact Spice Delight. Send message, email address, phone number, customer service, business hours, location, contact form fields: full name, email, phone number, message. Quick support and inquiries."
     },
     {
       "title": "Reservation - Book a Table",
       "url": "reservation/reservation.html",
+      "img": "about/image/reservation-image.jpg",
       "content": "Book a table at Spice Delight. Reservation form: full name, email, number of guests, reservation date, reservation time, message. Reservation confirmation message. Easy booking experience."
     },
     {
       "title": "Blog - Culinary Stories",
       "url": "blog/blog.html",
+      "img": "images/food.png",
       "content": "Our Culinary Stories. Explore food tips, spices, healthy eating, kitchen hacks, professional cooking advice."
     },
     {
       "title": "Blog: The Art of Balancing Spices",
       "url": "blog/blog.html#post1",
+      "img": "images/spice-flavour.png",
       "content": "How to combine spices, flavors, aroma balance, seasoning mastery, spice pairing, food taste improvement."
     },
     {
       "title": "Blog: 5 Healthy Meals in 20 Minutes",
       "url": "blog/blog.html#post2",
+      "img": "images/Healthy-Meal.jpg",
       "content": "Quick healthy cooking, fast recipes, nutritious meals, easy-to-cook dishes, time saving meals."
     },
     {
       "title": "Blog: Chef’s Secret to Freshness",
       "url": "blog/blog.html#post3",
+      "img": "images/chef-tips-image.jpg",
       "content": "Food freshness, meal prepping, kitchen hygiene, storage techniques, preserving taste, keeping food fresh longer."
     },
     {
       "title": "Blog: Why Restaurant Hygiene Matters",
       "url": "blog/blog.html#modal4",
+      "img": "images/Hygiene.png",
       "content": "Restaurant hygiene, food safety, sanitization, cleaning standards, customer trust, safe food handling."
     },
     {
       "title": "Blog: Top 5 Table Booking Mistakes",
       "url": "blog/blog.html#modal5",
+      "img": "images/Booking-tip.png",
       "content": "Reservation mistakes, booking errors, confirmation messages, group size issues, timing mistakes."
     },
     {
       "title": "Blog: Why Fresh Ingredients Matter",
       "url": "blog/blog.html#modal6",
+      "img": "images/Healthy-Eating.png",
       "content": "Fresh ingredients, nutrition benefits, immunity boost, vegetables, healthy lifestyle, natural foods."
     }
   ]
