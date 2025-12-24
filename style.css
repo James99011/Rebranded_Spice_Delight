@@ -1814,7 +1814,7 @@ html, body {
 
 @media (max-width: 480px) {
   #site-search-trigger {
-    left: 420px !important;
+    left: 135px !important;
     top: 30px !important;
     
   }
