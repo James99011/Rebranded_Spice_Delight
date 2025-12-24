@@ -1812,6 +1812,15 @@ html, body {
 }
 
 
+@media (max-width: 480px) {
+  #site-search-trigger {
+    left: 420px !important;
+    top: 30px !important;
+    
+  }
+}
+
+
 /* ===== Full-screen overlay ===== */
 #site-search-overlay {
   position: fixed;
