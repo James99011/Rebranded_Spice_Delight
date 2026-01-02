@@ -13,23 +13,39 @@
 </head>
 <body>
   <header>
-    <!-- Navbar section -->
     <nav class="navbar">
-     <!-- Left: Toggle Button and Cart Count -->
       <div class="nav-left">
         <button id="navToggle" class="toggle-btn">
           <span id="toggleSymbol">+</span>
         </button>
         <a href="shop/shop.html?showCart=true" style="text-decoration: none;"><span id="cartCount">(0)</span></a>
+        <div id="authTriggerMobile" class="auth-icon-mobile">
+          <i class="fas fa-user-circle"></i>
+        </div>
       </div>
 
-      <!-- Center: Logo -->
       <div class="nav-center">
-        <a href="index.html"  style="text-decoration: none;"><div class="logo">SpiceDelight</div></a>
+        <a href="index.html" style="text-decoration: none;"><div class="logo">SpiceDelight</div></a>
       </div>
 
-      <!-- Right: Menu for Laptop view -->
       <div class="nav-right desktop-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop/shop.html">Shop</a></li>
+          <li><a href="video/video.html">Videos</a></li>
+          <li><a href="about/about.html">About</a></li>
+          <li><a href="contact/contact.html">Contact</a></li>
+          <li><a href="shop/shop.html?showCart=true">Cart 🛒</a></li>
+          <li id="authBtnContainer">
+            <button id="loginBtn" class="btn-login-main">Sign In</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Mobile dropdown menu -->
+
+      <div class="mobile-menu" id="mobileMenu">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="shop/shop.html">Shop</a></li>
@@ -39,27 +55,76 @@
           <li><a href="shop/shop.html?showCart=true">Cart 🛒</a></li>
         </ul>
       </div>
-    </nav>
+</header>
 
+<div id="authModal" class="auth-modal-overlay">
+  <div class="auth-card">
+    <button id="closeAuth" class="close-modal">&times;</button>
+    <div id="authContent">
+      <h2 id="authTitle">Welcome Back</h2>
+      <p id="authSubtitle">Please enter your details to continue</p>
+      <div id="authError" class="auth-error-msg"></div>
+      <form id="authForm">
+        <div class="input-group">
+          <input type="email" id="userEmail" placeholder="Email Address" required>
+        </div>
+       <!--  <div class="input-group" id="passwordGroup">
+          <input type="password" id="userPassword" placeholder="Password" required>
+        </div> -->
 
-    <!-- Mobile dropdown menu -->
-    <div class="mobile-menu" id="mobileMenu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop/shop.html">Shop</a></li>
-        <li><a href="video/video.html">Videos</a></li>
-        <li><a href="about/about.html">About</a></li>
-        <li><a href="contact/contact.html">Contact</a></li>
-        <li><a href="shop/shop.html?showCart=true">Cart 🛒</a></li>
-      </ul>
+        <div class="input-group password-wrapper">
+          <input type="password" id="userPassword" minlength="6" required>
+          <span id="togglePassword" class="password-eye">👁</span>
+          <small>Password must be at least 6 characters</small>
+        </div>
+
+        <div class="input-group" id="otpGroup" style="display:none;">
+          <input type="text" id="otpCode" placeholder="6-Digit Verification Code">
+          <small>We sent a code to your email.</small>
+        </div>
+        
+        <div id="authLoader" class="auth-loader">
+          <div class="spinner"></div>
+          <span>Processing…</span>
+        </div>
+        <button type="submit"  id="mainAuthBtn" class="auth-submit-btn">Continue</button>
+      </form>
+      
+      <div class="auth-footer">
+        <p id="toggleAuthText">Don't have an account? <span id="switchAuth">Sign Up</span></p>
+      </div>
     </div>
-  </header>
-   
+  </div>
+</div>
   
   <!-- search-icon.html -->
   <!-- Floating circle icon -->
     <div id="site-search-trigger" aria-label="Open search" title="Search site" role="button" tabindex="0">
-      🔎
+      <svg
+        class="search-icon"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+       >
+        <circle
+          cx="11"
+          cy="11"
+          r="7"
+          stroke="#3B82F6"
+          stroke-width="2"
+        />
+        <line
+          x1="16.65"
+          y1="16.65"
+          x2="21"
+          y2="21"
+          stroke="#3B82F6"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
     </div>
 
     <!-- Overlay (insert anywhere in body; JS will toggle visibility) -->
@@ -690,6 +755,7 @@
 
 <!-- AOS JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script type="module" src="auth.js"></script>
 <script src="global.js"></script>
 <script src="script.js"></script>
 <script src="search.js" defer></script> 
