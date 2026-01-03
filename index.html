@@ -73,10 +73,14 @@
         </div> -->
 
         <div class="input-group password-wrapper">
-          <input type="password" id="userPassword" minlength="6" required>
+          <input type="password" id="userPassword" minlength="6" placeholder="Password" required>
           <span id="togglePassword" class="password-eye">👁</span>
-          <small>Password must be at least 6 characters</small>
+          <div id="passwordStrengthMsg" class="strength-text">Password must be at least 6 characters</div>
         </div>
+
+         
+
+       
 
         <div class="input-group" id="otpGroup" style="display:none;">
           <input type="text" id="otpCode" placeholder="6-Digit Verification Code">
@@ -92,6 +96,10 @@
       
       <div class="auth-footer">
         <p id="toggleAuthText">Don't have an account? <span id="switchAuth">Sign Up</span></p>
+      </div>
+
+      <div class="forgot-link-container">
+          <p class="small-text">Forgotten your password?<span id="forgotPassword" class="link-style">Reset here</span></p>
       </div>
     </div>
   </div>

@@ -1,3 +1,47 @@
+// Import sendPasswordResetEmail at the very top of your file from firebase-auth
+import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+document.getElementById('forgotPassword').onclick = async () => {
+  const email = document.getElementById("userEmail").value.trim();
+  
+  if (!email) {
+    showErrorMessage("auth/invalid-email");
+    authError.textContent = "Please enter your email address first.";
+    return;
+  }
+
+  try {
+    await sendPasswordResetEmail(auth, email);
+    
+    // SUCCESS MESSAGE (Green)
+    authError.style.display = 'block';
+    authError.style.backgroundColor = '#e8f5e9'; 
+    authError.style.color = '#2e7d32';
+    authError.textContent = "Reset link sent! Check your inbox (and Spam).";
+
+    // Optional: Hide after 5 seconds so it doesn't stay there
+    setTimeout(() => { authError.style.display = 'none'; }, 5000);
+
+  } catch (error) {
+    // ERROR HANDLING
+    if (error.code === 'auth/user-not-found' || error.code === 'auth/invalid-email') {
+      showErrorMessage('auth/user-not-found');
+      authError.textContent = "This email is not registered. Please create an account.";
+    } else {
+      // Handles other errors like network issues
+      showErrorMessage(error.code);
+    }
+  }
+};
+ 
+
+ 
+
+
+
+
+ 
+ 
  // --- FIREBASE CONFIGURATION ---
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
@@ -84,20 +128,53 @@ function updateModeUI() {
   };
 }
 
+
 // --- AUTH SUBMISSION ---
 authForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const email = document.getElementById("userEmail").value.trim();
   const password = document.getElementById("userPassword").value;
+  const strengthMsg = document.getElementById("passwordStrengthMsg");
 
-  if (password.length < 6) {
-    showErrorMessage("auth/weak-password");
-    authError.textContent = "Password must be at least 6 characters.";
-    return;
+  // 1. CLEAR previous errors so the box shrinks back to normal size
+  authError.style.display = 'none';
+  strengthMsg.textContent = "";
+  strengthMsg.style.display = "none";
+
+ 
+  // --- Inside authForm.addEventListener ---
+
+if (!isLoginMode) {
+  const hasUpper = /[A-Z]/.test(password);
+  const hasLower = /[a-z]/.test(password);
+  const hasNumber = /[0-9]/.test(password);
+  const hasSymbol = /[@$!%*?&]/.test(password);
+  const isLongEnough = password.length >= 8;
+
+  if (!(hasUpper && hasLower && hasNumber && hasSymbol && isLongEnough)) {
+    strengthMsg.textContent = "Weak! Use 8+ chars (Uppercase, Number & Symbol)";
+    strengthMsg.className = "strength-text strength-weak";
+    strengthMsg.style.display = "block";
+    return; // STOP here
+  }
+}
+
+// If it passes all checks, hide the message and move to Firebase
+strengthMsg.style.display = "none";
+toggleLoader(true);
+
+
+
+
+
+  try {
+     // ... your existing Firebase code (createUserWithEmailAndPassword) ...
+  } catch (error) {
+     toggleLoader(false);
+     showErrorMessage(error.code); // This will catch "Email already in use"
   }
 
-  toggleLoader(true);
-  authError.style.display = 'none';
+
 
   try {
     if (!isLoginMode) {
