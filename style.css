@@ -2424,12 +2424,87 @@ html, body {
 
 
 
+.google-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: 0.3s ease;
+}
+
+.google-btn:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.google-btn i {
+  color: #4285F4; /* Google Brand Blue */
+  font-size: 18px;
+}
+
+/* The "OR" line styling */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #888;
+}
+
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #eee;
+}
+
+.divider span {
+  padding: 0 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
 
 
 
+/* Tighten the card padding */
+.auth-card {
+    padding: 20px 25px !important; /* Reduced vertical padding */
+    max-width: 380px !important;   /* Slightly narrower */
+}
 
+/* Make Google button smaller */
+.google-btn {
+    padding: 10px !important;
+    margin-bottom: 12px !important;
+    font-size: 14px !important;
+}
 
+/* Slim down the divider */
+.divider {
+    margin: 10px 0 !important; /* Reduced from 20px */
+}
+
+/* Shrink the error and small text */
+.strength-text, .small-text, .auth-footer p {
+    font-size: 12px !important;
+    margin-top: 2px !important;
+}
+
+/* Move Forgot Password inside the footer to save space */
+.forgot-link-container {
+    margin-top: 8px !important;
+    text-align: center !important;
+}
 
 
 

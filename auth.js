@@ -44,7 +44,7 @@ document.getElementById('forgotPassword').onclick = async () => {
  
  // --- FIREBASE CONFIGURATION ---
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -300,3 +300,24 @@ if (window.location.search.includes('mode=login')) {
     // Now, if you refresh, the URL is clean and the modal stays closed!
     window.history.replaceState({}, document.title, window.location.pathname);
 }
+
+
+
+
+const googleProvider = new GoogleAuthProvider();
+
+document.getElementById('googleAuth').onclick = async () => {
+  try {
+    const result = await signInWithPopup(auth, googleProvider);
+    const user = result.user;
+    
+    // We can show your success checkmark animation immediately
+    showSuccessAnimation();
+    
+    console.log("Google User Logged In:", user.displayName);
+  } catch (error) {
+    if (error.code !== 'auth/popup-closed-by-user') {
+      showErrorMessage(error.code);
+    }
+  }
+};
