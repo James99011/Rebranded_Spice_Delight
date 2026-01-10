@@ -2508,6 +2508,55 @@ html, body {
 
 
 
+.auth-error-msg {
+    position: absolute; /* This is the secret */
+    top: 90px;         /* Position it right under the title */
+    left: 25px;
+    right: 25px;
+    z-index: 10;       /* Make sure it's on top */
+    margin-bottom: 0; 
+    font-size: 13px;
+    padding: 8px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: none;
+}
+
+/* Add extra top padding to the card only when error is active to keep it clean */
+.auth-card {
+    position: relative; /* Needed for the absolute error box */
+    padding-top: 40px !important; 
+}
+
+
+
+/* Add this to your main CSS file or a style tag */
+#authBtnContainer, #auth-status-container {
+    visibility: hidden; /* Hide until Firebase says go */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

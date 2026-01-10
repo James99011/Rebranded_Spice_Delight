@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SpiceDelight | Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="dash-sidebar">
+          <div id="auth-status-container">
+            <div class="profile-section">
+                <img id="dashUserPic"  src="" alt="Profile">
+                <h2 id="dashUserName">...</h2>
+                <p id="dashUserEmail">...</p>
+            </div>
+          </div> 
+            <nav class="dash-nav">
+                <button class="active">Dashboard</button>
+                <button><i class="fas fa-utensils"></i> My Reservations</button>
+                <button><i class="fas fa-shopping-bag"></i> Order History</button>
+                <button id="dashLogout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </nav>
+        </aside>
+
+        <main class="dash-main">
+            <div class="welcome-banner">
+                <h1 id="welcomeName">Welcome back!</h1>
+                <p>Manage your SpiceDelight profile.</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card"><h3>0</h3><p>Orders</p></div>
+                <div class="stat-card"><h3>0</h3><p>Reservations</p></div>
+                <div class="stat-card"><h3>0</h3><p>Favorites</p></div>
+            </div>
+        </main>
+    </div>
+
+    
+   
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script type="module" src="dashboard.js"></script> -->
+<script type="module" src="../global-auth.js"></script>
+</body>
+</html>

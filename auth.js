@@ -129,6 +129,11 @@ function updateModeUI() {
 }
 
 
+  
+ 
+
+
+
 // --- AUTH SUBMISSION ---
 authForm.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -228,7 +233,7 @@ function showSuccessAnimation() {
     <h2>Welcome Back!</h2>
     <p>Success! Redirecting to your dashboard...</p>
   `;
-  setTimeout(() => { window.location.href = "dashboard.html"; }, 2500);
+  setTimeout(() => { window.location.href = "dashboard/dashboard.html"; }, 2500);
 }
 
 // Initialize UI
