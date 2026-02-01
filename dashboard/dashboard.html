@@ -12,6 +12,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+    <script>
+        // Instant check: If the browser thinks we logged out, hide the body immediately
+        if (sessionStorage.getItem('loggedOut') === 'true') {
+            document.documentElement.style.display = 'none';
+        }
+    </script>
+
+
+
+
+
     <div class="dashboard-container">
         <aside class="dash-sidebar">
           <div id="auth-status-container">

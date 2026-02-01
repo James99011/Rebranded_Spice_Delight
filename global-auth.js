@@ -28,6 +28,25 @@ onAuthStateChanged(auth, (user) => {
     const welcomeMsg = document.getElementById('welcomeName');
 
     if (user) {
+
+        // 1. Define the fallbacks so no account looks "empty"
+        const userPhoto = user.photoURL || '../images/default-avatar.png'; 
+        const userName = user.displayName || user.email.split('@')[0]; // Uses part of email if name is missing
+
+        // 2. Update your Dashboard IDs (Fixes the "..." email bug)
+        const dashPic = document.getElementById('dashUserPic');
+        const dashName = document.getElementById('dashUserName');
+        const dashEmail = document.getElementById('dashUserEmail'); // Targets the email p tag
+        const welcomeMsg = document.getElementById('welcomeName');
+
+        if (dashPic) dashPic.src = userPhoto;
+        if (dashName) dashName.textContent = userName;
+        if (dashEmail) dashEmail.textContent = user.email; // This replaces the "..." with the real email
+
+        if (welcomeMsg) {
+            welcomeMsg.innerHTML = `Welcome back, <span style="color:#e67e22;">Chef ${userName.split(' ')[0]}</span>!`;
+        }
+
         // --- LANDING PAGE LOGIC ---
         const isSubfolder = window.location.pathname.includes('/shop/') || window.location.pathname.includes('/dashboard/');
         const dashPath = isSubfolder ? '../dashboard/dashboard.html' : 'dashboard/dashboard.html';
@@ -61,15 +80,16 @@ onAuthStateChanged(auth, (user) => {
     containers.forEach(c => { if(c) c.style.visibility = 'visible'; });
 });
 
-// LOGOUT LOGIC (Optional, but makes the dashboard button work)
+// LOGOUT LOGIC
 document.addEventListener('click', (e) => {
     if (e.target && e.target.id === 'dashLogout') {
         signOut(auth).then(() => {
+            // 1. First, tell the browser to forget where it was
+            window.history.pushState(null, null, window.location.href);
+            // 2. Then, send them to the home page
             window.location.href = '../index.html';
+        }).catch((error) => {
+            console.error("Logout error:", error);
         });
     }
 });
-
-
-
-
